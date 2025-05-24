@@ -1,101 +1,599 @@
 import Image from "next/image";
+import './globals.css';
+import Link from "next/link";
+import { ArrowRight ,ArrowLeft, Laptop,Fingerprint,Clipboard,Database,Video,Facebook,Instagram,Twitter} from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const newsData = [
+    {
+      id: 1,
+      image: "/members/m1.jpeg", // Adjust path as needed
+      author: "Admin",
+      date: "05 Aug 2019",
+      title: "Monthly Web Development Update Design Ethics & Clarity Over Solution",
+      link: "#", // Replace with actual news article URL
+    },
+    {
+      id: 2,
+      image: "/members/m2.jpeg",
+      author: "Admin",
+      date: "05 Aug 2019",
+      title: "Design System: What It And How To Create One Using Indigo Design Sence",
+      link: "#",
+    },
+    {
+      id: 3,
+      image: "/members/m3.jpeg",
+      author: "Admin",
+      date: "05 Aug 2019",
+      title: "How We Used WebAssembly To Speed Up Our Web App By Omnivus",
+      link: "#",
+    },
+    // Add more news items as needed
+  ];
+
+  const testimonialsData = [
+    {
+      id: 1,
+      quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at est id leo luctus gravida a in ipsum.",
+      author: "Eugene Freeman",
+      position: "Tincidunt",
+      photo: "/members/01.jpeg", // Adjust path as needed
+      colorClass: "bg-blue-100 text-blue-800 border-blue-500", // Tailwind classes for background and text color
+    },
+    {
+      id: 2,
+      quote: "Another great experience! The team was highly professional and delivered exactly what was promised. Highly recommended.",
+      author: "Kelly Coleman",
+      position: "Nulla nec",
+      photo: "/members/02.jpeg",
+      colorClass: "bg-red-100 text-red-800 border-red-500",
+    },
+    {
+      id: 3,
+      quote: "Fantastic service! They really understood our needs and provided an exceptional solution. Will definitely work with them again.",
+      author: "Philip Mendez",
+      position: "Consectetur",
+      photo: "/members/03.jpeg",
+      colorClass: "bg-green-100 text-green-800 border-green-500",
+    },
+    
+    // Add more testimonials as needed
+  ];
+
+  const teamMembersData = [
+    {
+      id: 1,
+      name: "Harry Garrett",
+      position: "Design Expert",
+      photo: "/members/team-01.jpeg", // Adjust path as needed
+      social: {
+        facebook: "#",
+        twitter: "#",
+        instagram: "#",
+      },
+    },
+    {
+      id: 2,
+      name: "Doris Jordan",
+      position: "Design Expert",
+      photo: "/members/team-02.jpeg", // Adjust path as needed
+      social: {
+        facebook: "#",
+        twitter: "#",
+        instagram: "#",
+      },
+    },
+    {
+      id: 3,
+      name: "Johnny Ramirez",
+      position: "Design Expert",
+      photo: "/members/team-03.jpeg", // Adjust path as needed
+      social: {
+        facebook: "#",
+        twitter: "#",
+        instagram: "#",
+      },
+    },
+    {
+      id: 4,
+      name: "Diana Wagner",
+      position: "Design Expert",
+      photo: "/members/team-04.jpeg", // Adjust path as needed
+      social: {
+        facebook: "#",
+        twitter: "#",
+        instagram: "#",
+      },
+    },
+    {
+      id: 5,
+      name: "Harry Garrett", // Re-used name for example, adjust as needed
+      position: "Design Expert",
+      photo: "/members/team-01.jpeg", // Adjust path as needed
+      social: {
+        facebook: "#",
+        twitter: "#",
+        instagram: "#",
+      },
+    },
+    // Add more team members as needed
+  ];
+
+  const services1 = [
+    {
+      icon: Laptop,
+      title: 'Desktop Computing',
+      description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantiutotam',
+      link: 'service-details.html',
+      // Dynamic colors, adjusting for color-1, color-2, color-3, color-4 from original HTML
+      bgColor: 'bg-blue-100', // Example for 'color-1'
+      textColor: 'text-blue-600',
+      hoverBgColor: 'group-hover:bg-blue-600',
+      hoverTextColor: 'group-hover:text-white',
+      hoverTitleColor: 'group-hover:text-white',
+      hoverDescriptionColor: 'group-hover:text-white'
+    },
+    {
+      icon: Laptop,
+      title: 'Desktop Computing',
+      description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantiutotam',
+      link: 'service-details.html',
+      bgColor: 'bg-green-100', // Example for 'color-2'
+      textColor: 'text-green-600',
+      hoverBgColor: 'group-hover:bg-green-600',
+      hoverTextColor: 'group-hover:text-white',
+      hoverTitleColor: 'group-hover:text-white',
+      hoverDescriptionColor: 'group-hover:text-white'
+    },
+    {
+      icon: Laptop,
+      title: 'Desktop Computing',
+      description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantiutotam',
+      link: 'service-details.html',
+      bgColor: 'bg-yellow-100', // Example for 'color-3'
+      textColor: 'text-yellow-600',
+      hoverBgColor: 'group-hover:bg-yellow-600',
+      hoverTextColor: 'group-hover:text-white',
+      hoverTitleColor: 'group-hover:text-white',
+      hoverDescriptionColor: 'group-hover:text-white'
+    },
+    {
+      icon: Laptop,
+      title: 'Desktop Computing',
+      description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantiutotam',
+      link: 'service-details.html',
+      bgColor: 'bg-yellow-100', // Example for another 'color-3'
+      textColor: 'text-yellow-600',
+      hoverBgColor: 'group-hover:bg-yellow-600',
+      hoverTextColor: 'group-hover:text-white',
+      hoverTitleColor: 'group-hover:text-white',
+      hoverDescriptionColor: 'group-hover:text-white'
+    },
+    {
+      icon: Laptop,
+      title: 'Desktop Computing',
+      description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantiutotam',
+      link: 'service-details.html',
+      bgColor: 'bg-blue-100', // Example for another 'color-1'
+      textColor: 'text-blue-600',
+      hoverBgColor: 'group-hover:bg-blue-600',
+      hoverTextColor: 'group-hover:text-white',
+      hoverTitleColor: 'group-hover:text-white',
+      hoverDescriptionColor: 'group-hover:text-white'
+    },
+    {
+      icon: Laptop,
+      title: 'Desktop Computing',
+      description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantiutotam',
+      link: 'service-details.html',
+      bgColor: 'bg-red-100', // Example for 'color-4'
+      textColor: 'text-red-600',
+      hoverBgColor: 'group-hover:bg-red-600',
+      hoverTextColor: 'group-hover:text-white',
+      hoverTitleColor: 'group-hover:text-white',
+      hoverDescriptionColor: 'group-hover:text-white'
+    },
+  ];
+
+  const services = [
+    {
+      icon: Laptop,
+      title: 'IT Solutions',
+      description: 'Sed ut perspiciatis unde omnis iste natus error volup',
+      link: 'service-details.html',
+      bgColor: 'bg-green-100', // Light indigo background for icon
+      textColor: 'text-green-600', // Indigo text for icon
+      hoverBgColor: 'group-hover:bg-green-600', // Hover background for icon
+      hoverTextColor: 'group-hover:text-white', // Hover text color for icon
+      // You could also add a hover color for the link itself
+      // hoverLinkColor: 'hover:text-indigo-600'
+    },
+    {
+      icon: Fingerprint,
+      title: 'Security System',
+      description: 'Sed ut perspiciatis unde omnis iste natus error volup',
+      link: 'service-details.html',
+      bgColor: 'bg-blue-100', // Light green background
+      textColor: 'text-blue-600', // Green text
+      hoverBgColor: 'group-hover:bg-blue-600',
+      hoverTextColor: 'group-hover:text-white',
+    },
+    {
+      icon: Clipboard,
+      title: 'Web Development',
+      description: 'Sed ut perspiciatis unde omnis iste natus error volup',
+      link: 'service-details.html',
+      bgColor: 'bg-yellow-100', // Light yellow background
+      textColor: 'text-yellow-600', // Yellow text
+      hoverBgColor: 'group-hover:bg-yellow-600',
+      hoverTextColor: 'group-hover:text-white',
+    },
+    {
+      icon: Database,
+      title: 'Database Security',
+      description: 'Sed ut perspiciatis unde omnis iste natus error volup',
+      link: 'service-details.html',
+      bgColor: 'bg-red-100', // Light red background
+      textColor: 'text-red-600', // Red text
+      hoverBgColor: 'group-hover:bg-red-600',
+      hoverTextColor: 'group-hover:text-white',
+    },
+  ];
+
+  return (
+    <div>
+      <Header />
+      <section className="relative bg-blue-100 py-32 md:py-48">
+
+      <div className="container-1470 mx-auto px-4 relative z-10">
+        
+        <div className="flex flex-col lg:flex-row items-center justify-between ml-">
+
+          {/* Left column: Text content (7/12 width on large screens, full width on smaller) */}
+          <div className="lg:w-7/12 text-center lg:text-left mb-10 lg:mb-0 pr-0 lg:pr-16">
+            {/* Banner text content */}
+            <div className="banner-content ">
+              {/* Title tag/category */}
+              <span className="text-black font-semibold text-2xl mb-8 block ml-5">
+                IT Business Consulting
+              </span>
+              {/* Main heading with responsive font sizes */}
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-800 leading-tight mb-14 ml-3">
+                Best IT Solutions <br className="hidden md:block"/> Provider Agency
+              </h1>
+              {/* Description paragraph */}
+              <p className="text-black text-lg md:text-xl leading-relaxed mb-14 ml-5 font-semibold">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremda tium totam rem aperiam eaque ipsa quae ab illo inventore veritatis
+              </p>
+              {/* Call-to-action button */}
+              <Link href="/services" className="inline-flex items-center px-8 py-6 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-900 transition-colors duration-300 text-md ml-5">
+                Our Services <ArrowRight size={20} className="ml-3" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Right column: Image (5/12 width on large screens, hidden on smaller) */}
+          <div className="lg:w-5/12 hidden lg:block flex justify-center lg:justify-end relative pl-24">
+             {/* Hexagonal shape for the image container */}
+            <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] bg-gray-200 rounded-lg overflow-hidden
+                          before:content-[''] before:absolute before:inset-0 before:bg-blue-500 before:z-0
+                          clip-path-polygon-hex">
+              {/* The actual image */}
+              <Image
+                src="/banner-img.jpeg" // Ensure this path is correct relative to your public folder
+                alt="IT Solutions Consulting"
+                layout="fill" // Makes the image fill the parent container
+                objectFit="cover" // Covers the container while maintaining aspect ratio
+                className="z-10 relative" // Ensure image is above the pseudo-element if used
+              />
+            </div>
+            
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </div>
+
+      {/* Static Slider navigation arrows (non-functional in this static version) */}
+      <div className="absolute bottom-5 right-5 flex space-x-2 z-20">
+        <button className="bg-white p-3 rounded-full shadow-md text-gray-600 hover:text-blue-600">
+          <ArrowLeft size={20} />
+        </button>
+        <button className="bg-white p-3 rounded-full shadow-md text-gray-600 hover:text-blue-600">
+          <ArrowRight size={20} />
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <div className="py-20 bg-gray-50">
+      <div className="mx-auto px-4 justify-center text-center bg-gray-50">
+        <span className="text-lg font-semibold text-blue-800 mb-4 block">
+          SERVICES
+        </span>
+        <h2 className="text-5xl font-bold text-black">What We Do</h2>
+      </div>
+
+      {/* Services section content */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-40 bg-gray-50 py-8 ">
+      {services.map((service, index) => (
+        <div key={index} className="service-item group text-center mt-6 p-6 rounded-lg shadow-md bg-white
+                                    hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+       
+       <div
+            className={`icon inline-flex items-center justify-center w-32 h-32 rounded-full mb-4
+                        transition-colors duration-300 ${service.bgColor} ${service.textColor}
+                        ${service.hoverBgColor} ${service.hoverTextColor}`}
+          >
+            <service.icon size={65} /> 
+          </div>
+          {/* Title */}
+          <h5 className="title text-xl font-bold text-gray-800 mb-2">
+            <Link href={service.link} className="hover:text-blue-600 transition-colors duration-300 ">
+              {service.title}
+            </Link>
+          </h5>
+          {/* Description */}
+          <p className="text-gray-600 text-base mt-5 mb-4">
+            {service.description}
+          </p>
+        </div>
+      ))}
+    </div>
+    </div>
+    </section>
+
+    <section className="feature-section section-gap bg-blue-50 py-16 md:py-24">
+      <div className="container mx-auto px-4 max-w-7xl"> {/* Using max-w-7xl for a standard container */}
+        {/* Responsive row: flex column on small, flex row on large. Centered vertically. */}
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-12 lg:gap-24">
+
+          {/* Left column: Image Gallery */}
+          <div className="w-full lg:w-1/2 md:max-w-xl lg:max-w-none"> {/* Full width on small, capped on medium, 1/2 on large */}
+            <div className="tile-gallery-one relative"> {/* Make this relative for absolute positioning of children if needed */}
+              {/* Image One */}
+              <div className="img-one z-10"> {/* Added shadow and rounding */}
+                {/* Adjust width/height as needed. Assuming aspect-video or specific dimensions */}
+                <Image
+                  src="/tile-gallery-01.jpeg" // Ensure path is correct
+                  alt="Feature Image One"
+                  width={600} // Example width
+                  height={400} // Example height, adjust as per your image aspect ratio
+                  className="h-auto object-cover border-4 border-white " 
+                />
+              </div>
+              {/* Image Two - positioned for a "tiled" effect, might need fine-tuning with top/right values */}
+              <div className="img-two absolute bottom-[-1rem] right-[-1rem] md:bottom-[-2rem] md:right-[-3rem] z-20 shadow-xl
+                              hidden sm:block"> {/* Hidden on very small screens, block on sm+ */}
+                <Image
+                  src="/tile-gallery-02.jpeg" // Ensure path is correct
+                  alt="Feature Image Two"
+                  width={500} // Example width, adjust as needed
+                  height={400} // Example height
+                  className="w-full h-auto object-cover border-4 border-white"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Right column: Feature Text Block */}
+          <div className="w-full lg:w-1/2 md:max-w-xl lg:max-w-none mt-10 lg:mt-0"> {/* Added top margin for mobile stacking */}
+            <div className="feature-text-block">
+              {/* Section Title */}
+              <div className="section-title mb-6"> {/* mb-20 approx mb-6 or mb-8 */}
+                <span className="title-tag text-blue-900 font-semibold text-base mb-2 block">
+                  CORE FEATURES
+                </span>
+                <h2 className="title text-5xl md:text-5xl font-bold text-gray-800 leading-tight">
+                  Get More Good Experience.
+                </h2>
+              </div>
+              {/* Big Text Paragraph */}
+              <p className="big-text text-xl text-gray-700 mb-6 font-medium"> {/* mb-30 approx mb-6 or mb-8 */}
+                Our knowledge of computers will help us
+              </p>
+              {/* Main Description */}
+              <p className="text-gray-600 text-base leading-relaxed mb-8">
+                Does any industry face a more complex audience journey and marketing sales process than B2B
+                technology? Consider the number of people who influence a sale, the length of the
+                decision-making cycle, the competing interests of the people who purchase, implement,
+                manage, and use the technology. It’s a lot meaningful content here.
+              </p>
+              {/* Feature Buttons */}
+              <ul className="feature-btn flex flex-wrap gap-4 mt-8"> {/* mt-30 approx mt-8 */}
+                <li>
+                  <Link href="/about" className="main-btn inline-flex items-center px-8 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition-colors duration-300">
+                    Learn More
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="main-btn main-btn-2 inline-flex items-center px-8 py-3 bg-white border border-blue-600 text-blue-600 font-semibold rounded-md hover:bg-blue-900 hover:text-white transition-colors duration-300">
+                    <Video size={20} className="mr-2" /> Intro Video
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section>
+      <div className="py-20 bg-gray-50">
+      <div className="mx-auto px-4 justify-center text-center bg-gray-50">
+        <span className="text-lg font-semibold text-blue-800 mb-4 block">
+          OUR LATEST SERVICES
+        </span>
+        <h2 className="text-5xl font-bold text-black leading-tight">We Offer Better Solution <br/> For Your IT Business</h2>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-40 py-16 ">
+      {services1.map((service, index) => (
+        // Each service item card. `mx-auto` for centering when grid items don't fill the row.
+        <div
+          key={index}
+          className="service-item-two group w-full max-w-sm mx-auto p-8 rounded-lg shadow-md bg-blue-50
+                     mt-6 hover:shadow-lg transition-all duration-300" // Example hover background for the entire card
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          {/* Icon container */}
+            <service.icon size={30} className={`${service.textColor} mb-3`}/>
+          {/* Title */}
+          <h3 className="title text-2xl font-bold text-gray-800 mb-4"> {/* h3 with larger font size */}
+            <Link
+              href={service.link}
+            >
+              {service.title}
+            </Link>
+          </h3>
+          {/* Description */}
+          <p className={`text-gray-600 text-base leading-relaxed mb-4'}`}>
+            {service.description}
+          </p>
+        </div>
+      ))}
+    </div>
+    </div>
+    </section>
+    
+
+    <section>
+      <div className="py-20 bg-gray-50">
+      <div className="mx-auto px-4 justify-center text-center bg-gray-50">
+        <span className="text-lg font-semibold text-blue-800 mb-4 block">
+          OUR TEAM MEMBERS
+        </span>
+        <h2 className="text-5xl font-bold text-black leading-tight">Meet our Exclusive <br/>Leadership</h2>
+      </div>
+
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+          {teamMembersData.map((member) => (
+            <div key={member.id} className="team-member mb-30">
+              <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                <div className="relative overflow-hidden group">
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    className="w-full h-auto object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 justify-end">
+                    <div className="flex space-x-3 ">
+                      <a href={member.social.facebook} target="_blank" rel="noopener noreferrer" className="text-white text-xl hover:text-blue-400 transition-colors justify-end">
+                        <Facebook size={24} />
+                      </a>
+                      <a href={member.social.twitter} target="_blank" rel="noopener noreferrer" className="text-white text-xl hover:text-blue-400 transition-colors">
+                        <Twitter size={24} />
+                      </a>
+                      <a href={member.social.instagram} target="_blank" rel="noopener noreferrer" className="text-white text-xl hover:text-blue-400 transition-colors">
+                        <Instagram size={24} />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6 text-center">
+                  <h5 className="text-xl font-semibold mb-1">
+                    <a href="#" className="text-gray-800 hover:text-blue-600 transition-colors">
+                      {member.name}
+                    </a>
+                  </h5>
+                  <span className="text-gray-600 text-sm">{member.position}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+    </section>
+
+
+    <section className="bg-blue-50 py-16">
+      <div className="mx-auto px-4 justify-center text-center">
+        <span className="text-lg font-semibold text-blue-800 mb-4 block">
+          CLIENT TESTIMONIALS
+        </span>
+        <h2 className="text-5xl font-bold text-black">What Our Clients Says</h2>
+      </div>
+
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-16 ">
+          {testimonialsData.map((testimonial) => (
+            <div key={testimonial.id} className="testimonial-item">
+              <div className={`testimonial-box p-8 shadow-md h-full flex flex-col bg-white border-t-4 ${testimonial.colorClass}`}>
+                <p className="text-lg leading-relaxed mb-6 flex-grow text-gray-500 py-6">
+                  {testimonial.quote}
+                </p>
+                <div className="author flex items-center mt-auto ">
+                  <div className="photo w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-white shadow-sm flex-shrink-0">
+                    <img
+                      src={testimonial.photo}
+                      alt={testimonial.author}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="desc text-black">
+                    <h6 className="text-xl font-semibold leading-tight">{testimonial.author}</h6>
+                    <span className="text-sm opacity-90">{testimonial.position}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+      </div>
+    </div>
+    </section>
+
+    <section>
+      <div className="py-20 bg-gray-50">
+      <div className="mx-auto px-4 justify-center text-center bg-gray-50">
+        <span className="text-lg font-semibold text-blue-800 mb-4 block">
+          LATEST NEWS
+        </span>
+        <h2 className="text-5xl font-bold text-black leading-tight">Read Our Latest <br/> News & Blog</h2>
+      </div>
+
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
+          {newsData.map((newsItem) => (
+            <div key={newsItem.id} className="w-full max-w-sm"> {/* Added max-w-sm to limit width on larger screens and w-full for small screens */}
+              <div className="latest-news-box mt-30 bg-gray-50 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                <div className="post-thumb h-48 overflow-hidden">
+                  <img src={newsItem.image} alt="News Image" className="w-full h-full object-cover" />
+                </div>
+                <div className="post-content p-6">
+                  <ul className="post-meta flex text-sm text-gray-600 mb-3 space-x-2">
+                    <li>
+                      <Link href={newsItem.link} className="hover:text-blue-600 transition-colors">
+                        By {newsItem.author},
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={newsItem.link} className="hover:text-blue-600 transition-colors">
+                        {newsItem.date}
+                      </Link>
+                    </li>
+                  </ul>
+                  <h4 className="title text-xl font-semibold mb-4 leading-tight">
+                    <Link href={newsItem.link} className="text-gray-800 hover:text-blue-600 transition-colors">
+                      {newsItem.title}
+                    </Link>
+                  </h4>
+                  <Link href={newsItem.link} className="read-more-btn inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                    Read More <ArrowRight size={18} className="ml-2" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <Footer/>
     </div>
   );
 }
