@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight ,ArrowLeft, Laptop,Fingerprint,Clipboard,Database,Video,Facebook,Instagram,Twitter} from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PortfolioSection from "@/components/Portfoliosection";
 
 export default function Home() {
 
@@ -458,6 +459,7 @@ export default function Home() {
     </div>
     </section>
     
+    <PortfolioSection />
 
     <section>
       <div className="py-20 bg-gray-50">

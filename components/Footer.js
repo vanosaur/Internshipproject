@@ -30,7 +30,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2 lg:col-span-1"> {/* Adjust column spans for better layout */}
             <div className="widget about-widget mb-6">
               <div className="logo mb-4">
-                <Image src="/logo-1.1.jpeg" alt="Logo" width={150} height={40} className="h-10 w-auto" /> {/* Adjust width/height as needed */}
+                <h1 className='text-white text-3xl'>OmniVus</h1>
               </div>
               <p className="text-sm leading-relaxed mb-3">
                 The web has changed a lot since Vitaly posted his first article back in 2006. The team at Smashing has changed too, as have the things that we bring to our community conferences, books, and our membership added to the online magazine.
@@ -91,7 +91,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="footer-copyright text-center pt-8 text-gray-400 text-sm">
           <p>
-            Copyright By@ <a href="https://webtend.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">WebTend</a> - 2021
+            Copyright By@ <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">WebTend</a> - 2021
           </p>
         </div>
       </div>
