@@ -73,24 +73,22 @@ function Services() {
   return (
     <div>
       <Header />
-      <div className="bg-blue-50 py-24 md:py-32 lg:py-48 flex items-center justify-center min-h-[50vh]">
-        {" "}
+      <div className="bg-white py-24 md:py-32 lg:py-48 flex items-center justify-center min-h-[50vh]">
         {/* Adjusted padding and minimum height for responsiveness */}
-        <div className="text-center px-4">
-          {" "}
+        <div className="text-center px-4 pt-14">
           {/* Added text-center and horizontal padding */}
           <h1 className="text-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-2">
             Services
-          </h1>{" "}
+          </h1>
           {/* Responsive font sizes */}
           <h2 className="text-gray-500 text-lg sm:text-xl md:text-2xl mt-2 md:mt-3 font-bold">
             Home <span className="mx-2">|</span> Services
-          </h2>{" "}
+          </h2>
           {/* Responsive font sizes and separator */}
         </div>
       </div>
 
-      <section className="pt-20 pb-24 bg-white p-40">
+      <section className="pb-24 bg-white pl-40 pr-40">
         <div className="container mx-auto px-4 ">
           <div className="flex flex-wrap justify-center">
             {services.map((service, index) => (
@@ -98,7 +96,7 @@ function Services() {
                 key={index}
                 className="w-full sm:w-4/5 md:w-1/2 lg:w-1/3 p-4"
               >
-                <div className="relative overflow-hidden rounded-2xl shadow-lg group">
+                <div className="relative overflow-hidden shadow-lg group">
                   <div className="h-64 relative">
                     <Image
                       src={service.image}
