@@ -88,149 +88,173 @@ function Services() {
         </div>
       </div>
 
-      <section className="pb-24 bg-white pl-40 pr-40">
-        <div className="container mx-auto px-4 ">
-          <div className="flex flex-wrap justify-center">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="w-full sm:w-4/5 md:w-1/2 lg:w-1/3 p-4"
-              >
-                <div className="relative overflow-hidden shadow-lg group">
-                  <div className="h-64 relative">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      layout="fill"
-                      objectFit="cover"
-                      className="transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-6">
-                    <div className="mb-3">{service.icon}</div>
-                    <h4 className="text-xl font-semibold mb-2">
-                      <a href="#" className="hover:underline">
-                        {service.title}
-                      </a>
-                    </h4>
-                    <p className="text-sm text-center">{service.description}</p>
-                  </div>
+      <section className="pb-16 sm:pb-20 md:pb-24 bg-white lg:pl-40 lg:pr-40"> {/* Responsive vertical padding */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8"> {/* Responsive horizontal padding */}
+        <div className="flex flex-wrap justify-center -m-4"> {/* Negative margin to counteract p-4 on columns */}
+          {services.map((service, index) => (
+            <div
+              key={index}
+              // Responsive width for columns:
+              // w-full on mobile
+              // sm:w-1/2 on small screens (2 per row)
+              // lg:w-1/3 on large screens (3 per row)
+              // xl:w-1/4 on extra large screens (4 per row - if you have more items)
+              className="w-full sm:w-1/2 lg:w-1/3 p-4"
+            >
+              <div className="relative overflow-hidden shadow-lg group">
+                <div className="h-64 relative"> {/* Fixed height for consistency */}
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-6">
+                  <div className="mb-3">{service.icon}</div>
+                  <h4 className="text-xl font-semibold mb-2 text-center">
+                    <a href="#" className="hover:underline">
+                      {service.title}
+                    </a>
+                  </h4>
+                  <p className="text-sm text-center">{service.description}</p>
                 </div>
               </div>
-            ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-blue-50">
+      {/* Container to limit width and add responsive horizontal padding */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header and Toggle Buttons */}
+        <div className="flex flex-col md:flex-row items-center justify-between mb-8 sm:mb-10 md:mb-12 text-center md:text-left">
+          <div className="max-w-xl">
+            {/* Responsive font size for 'PLANS' text */}
+            <span className="text-blue-600 font-semibold text-sm sm:text-base">
+              PLANS ______
+            </span>
+            {/* Responsive font sizes for main heading */}
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mt-2 text-black">
+              Here are our plans
+            </h2>
+          </div>
+          <div className="mt-6 md:mt-0"> {/* Adjust top margin for mobile, remove on desktop */}
+            {/* Flexbox for buttons: stack on small, side-by-side on medium */}
+            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 bg-white p-2 sm:p-3 rounded-md shadow-sm">
+              <button
+                className={`px-5 py-3 sm:px-6 sm:py-4 text-sm sm:text-md font-semibold rounded-md transition-all ${
+                  activeTab === "monthly"
+                    ? "bg-blue-600 text-white shadow-md"
+                    : "bg-white text-blue-600"
+                }`}
+                onClick={() => setActiveTab("monthly")}
+              >
+                Monthly
+              </button>
+              <button
+                className={`px-5 py-3 sm:px-6 sm:py-4 text-sm sm:text-md font-semibold rounded-md transition-all ${
+                  activeTab === "yearly"
+                    ? "bg-blue-600 text-white shadow-md"
+                    : "bg-white text-blue-600"
+                }`}
+                onClick={() => setActiveTab("yearly")}
+              >
+                Yearly
+              </button>
+            </div>
           </div>
         </div>
-      </section>
 
-      <section className="py-16 bg-blue-50 p-40">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between mb-12">
-            <div className="max-w-xl">
-              <span className="text-blue-600 font-semibold text-md">
-                PLANS ______
+        {/* Pricing Cards Grid */}
+        {/* Responsive grid columns: 1 on mobile, 2 on small, 3 on large, 4 on extra-large */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
+          {pricingData[activeTab].map((plan, index) => (
+            <div
+              key={index}
+              className="group bg-white bg-opacity-60 p-6 sm:p-8 md:p-10 lg:p-12 h-full flex flex-col justify-between items-center text-center text-black hover:bg-blue-600 hover:text-white transition-colors duration-300 rounded-lg shadow-md hover:shadow-lg"
+            >
+              {/* Responsive font sizes for plan name */}
+              <p className="text-xs sm:text-sm font-semibold text-blue-600 group-hover:text-white">
+                {plan.name}
+              </p>
+              {/* Responsive font sizes for price */}
+              <h4 className="text-xl sm:text-2xl font-bold mt-4 group-hover:text-white">
+                ${" "}
+                <span className="text-5xl sm:text-6xl group-hover:text-white">
+                  {plan.price}
+                </span>
+              </h4>
+              {/* Responsive font size for duration */}
+              <span className="text-xs sm:text-sm text-gray-400 mt-2 group-hover:text-white">
+                {plan.duration}
               </span>
-              <h2 className="text-5xl font-extrabold mt-2 text-black">
-                Here is plans
-              </h2>
-            </div>
-            <div className="mt-6 md:mt-0">
-              <div className="flex space-x-4 bg-white p-3">
-                <button
-                  className={`px-6 py-4 text-md font-semibold transition-all ${
-                    activeTab === "monthly"
-                      ? "bg-blue-600 text-white"
-                      : "bg-white text-blue-600"
-                  }`}
-                  onClick={() => setActiveTab("monthly")}
-                >
-                  Monthly
-                </button>
-                <button
-                  className={`px-6 py-4 text-md font-semibold transition-all ${
-                    activeTab === "yearly"
-                      ? "bg-blue-600 text-white"
-                      : "bg-white text-blue-600"
-                  }`}
-                  onClick={() => setActiveTab("yearly")}
-                >
-                  Yearly
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {pricingData[activeTab].map((plan, index) => (
-              <div
-                key={index}
-                className="group bg-white bg-opacity-60 p-16 h-full flex flex-col justify-between text-center text-black hover:bg-blue-600 hover:text-white transition-colors"
+              <span className="text-gray-400 my-4 group-hover:text-white">
+                _____
+              </span>
+              {/* Responsive font size for description, flex-grow for consistent height */}
+              <p className="text-xs sm:text-sm mb-6 text-gray-400 group-hover:text-white flex-grow">
+                The functional goal of technical content is to help people use
+                a product successfully.
+              </p>
+              {/* Responsive padding for button, added rounded corners and shadow */}
+              <a
+                href="#"
+                className="inline-block mt-auto bg-white text-blue-600 font-semibold px-5 py-2.5 rounded-md group-hover:bg-white group-hover:text-blue-600 transition-colors duration-300 shadow-sm hover:shadow-md"
               >
-                <p className="text-sm font-semibold text-blue-600 group-hover:text-white">
-                  {plan.name}
-                </p>
-                <h4 className="text-2xl font-bold mt-4 group-hover:text-white">
-                  ${" "}
-                  <span className="text-6xl group-hover:text-white">
-                    {plan.price}
-                  </span>
-                </h4>
-                <span className="text-sm text-gray-400 mt-2 group-hover:text-white">
-                  {plan.duration}
-                </span>
-                <span className="text-gray-400 mb-4 group-hover:text-white">
-                  _____
-                </span>
-                <p className="text-sm mb-4 text-gray-400 group-hover:text-white">
-                  The functional goal of technical content is to help people use
-                  a product successfully.
-                </p>
-                <a
-                  href="#"
-                  className="inline-block mt-auto bg-white text-blue-600 font-semibold px-4 py-2 group-hover:bg-white group-hover:text-blue-600 transition"
-                >
-                  Purchase Now
-                </a>
-              </div>
-            ))}
+                Purchase Now
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    <section className="latest-news bg-gray-900 py-12 sm:py-16 md:py-20 lg:py-24"> {/* Adjusted vertical padding */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8"> {/* Responsive horizontal padding */}
+        <div className="flex justify-center">
+          <div className="text-center max-w-xl mb-8 sm:mb-10 md:mb-12"> {/* Adjusted bottom margin */}
+            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold mb-4">News Feeds</h2> {/* Responsive font sizes */}
+            <p className="text-gray-400 text-sm sm:text-base"> {/* Responsive font size */}
+              Does any industry face a more complex audience journey and marketing sales process than B2B technology.
+            </p>
           </div>
         </div>
-      </section>
-
-
-      <section className="latest-news section-gap bg-gray-900 py-16 p-40">
-        <div className="container mx-auto px-4">
-            <div className="flex justify-center">
-            <div className="text-center max-w-xl mb-10">
-                <h2 className="text-white text-3xl font-bold mb-4">News Feeds</h2>
-                <p className="text-gray-400">
-                Does any industry face a more complex audience journey and marketing sales process than B2B technology.
-                </p>
-            </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((imgNum, index) => (
-                <div key={index} className="bg-white bg-opacity-5  transition p-4 group rounded-lg">
-                <img
-                    src={`/members/h${imgNum}.jpeg`}
-                    alt="News"
-                    className="w-full rounded-md mb-4"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10"> {/* Responsive grid and gaps */}
+          {[1, 2, 3].map((imgNum, index) => ( // Using static numbers for example images
+            <div key={index} className="bg-white bg-opacity-5 transition p-4 sm:p-6 group rounded-lg"> {/* Responsive padding */}
+              {/* Image with fixed aspect ratio, consider responsive sizing for Image if needed */}
+              <div className="relative w-full h-48 sm:h-56 md:h-64 mb-4 rounded-md overflow-hidden">
+                <Image
+                  src={`/members/h${imgNum}.jpeg`} // Ensure these paths are correct
+                  alt="News"
+                  layout="fill"
+                  objectFit="cover"
+                  className="transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="post-content">
-                    <span className="text-blue-400 group-hover:text-white text-sm font-medium">Design/SEO</span>
-                    <h5 className="text-lg font-semibold text-white mt-2 group-hover:underline">
-                    <a href="blog-details.html">A series of iOS 7 inspired vector icons.</a>
-                    </h5>
-                </div>
-                <a
-                    href="blog-details.html"
-                    className="inline-block text-blue-400 group-hover:text-white mt-3 text-xl transition"
-                >
-                    <i className="fal fa-long-arrow-right"></i>
-                </a>
-                </div>
-            ))}
+              </div>
+              <div className="post-content">
+                <span className="text-blue-400 group-hover:text-white text-xs sm:text-sm font-medium">Design/SEO</span> {/* Responsive font size */}
+                <h5 className="text-lg sm:text-xl font-semibold text-white mt-2 group-hover:underline"> {/* Responsive font size */}
+                  <a href="blog-details.html">A series of iOS 7 inspired vector icons.</a>
+                </h5>
+              </div>
+              <a
+                href="blog-details.html"
+                className="inline-block text-blue-400 group-hover:text-white mt-3 text-lg sm:text-xl transition" /* Responsive font size */
+              >
+                {/* Ensure you have FontAwesome or similar setup for 'fa-long-arrow-right' if not using Lucide */}
+                <i className="fal fa-long-arrow-right"></i>
+              </a>
             </div>
+          ))}
         </div>
+      </div>
     </section>
 
     <Footer/>

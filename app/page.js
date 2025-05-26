@@ -1,7 +1,7 @@
 import Image from "next/image";
 import './globals.css';
 import Link from "next/link";
-import { ArrowRight ,ArrowLeft, Laptop,Fingerprint,Clipboard,Database,Video,Facebook,Instagram,Twitter} from "lucide-react";
+import { ArrowRight ,ArrowLeft, Laptop,Fingerprint,Clipboard,Database,Video,Facebook,Instagram,Twitter,MessageSquare} from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PortfolioSection from "@/components/Portfoliosection";
@@ -309,41 +309,46 @@ export default function Home() {
     </section>
 
     <section>
-      <div className="py-20 bg-gray-50">
-      <div className="mx-auto px-4 justify-center text-center bg-gray-50">
-        <span className="text-lg font-semibold text-blue-800 mb-4 block">
-          SERVICES
-        </span>
-        <h2 className="text-5xl font-bold text-black">What We Do</h2>
-      </div>
-
-      {/* Services section content */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-40 bg-gray-50 py-8 ">
-      {services.map((service, index) => (
-        <div key={index} className="service-item group text-center mt-6 p-6 rounded-lg shadow-md bg-white
-                                    hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-       
-       <div
-            className={`icon inline-flex items-center justify-center w-32 h-32 rounded-full mb-4
-                        transition-colors duration-300 ${service.bgColor} ${service.textColor}
-                        ${service.hoverBgColor} ${service.hoverTextColor}`}
-          >
-            <service.icon size={65} /> 
-          </div>
-          {/* Title */}
-          <h5 className="title text-xl font-bold text-gray-800 mb-2">
-            <Link href={service.link} className="hover:text-blue-600 transition-colors duration-300 ">
-              {service.title}
-            </Link>
-          </h5>
-          {/* Description */}
-          <p className="text-gray-600 text-base mt-5 mb-4">
-            {service.description}
-          </p>
+      <div className="py-12 sm:py-16 md:py-20 bg-gray-50"> {/* Adjusted vertical padding */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"> {/* Centering container, responsive padding */}
+          <span className="text-base sm:text-lg font-semibold text-blue-800 mb-2 sm:mb-4 block">
+            SERVICES
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-8"> {/* Responsive font sizes */}
+            What We Do
+          </h2>
         </div>
-      ))}
-    </div>
-    </div>
+
+        {/* Services section content */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6 lg:px-8 py-8"> {/* Responsive grid and padding */}
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="service-item group text-center p-6 rounded-lg shadow-md bg-white
+                                      hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2
+                                      flex flex-col items-center justify-start" // Added flex for content alignment
+            >
+              <div
+                className={`icon inline-flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full mb-4
+                            transition-colors duration-300 ${service.bgColor} ${service.textColor}
+                            ${service.hoverBgColor} ${service.hoverTextColor}`}
+              >
+                <service.icon size={50} className="sm:w-14 sm:h-14 lg:w-[65px] lg:h-[65px]" /> {/* Responsive icon size */}
+              </div>
+              {/* Title */}
+              <h5 className="title text-lg sm:text-xl font-bold text-gray-800 mb-2">
+                <Link href={service.link} className="hover:text-blue-600 transition-colors duration-300">
+                  {service.title}
+                </Link>
+              </h5>
+              {/* Description */}
+              <p className="text-gray-600 text-sm sm:text-base mt-2 mb-4 flex-grow"> {/* flex-grow to ensure uniform height */}
+                {service.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
 
     <section className="feature-section section-gap bg-blue-50 py-16 md:py-24">
@@ -423,40 +428,43 @@ export default function Home() {
 
 
     <section>
-      <div className="py-20 bg-gray-50">
-      <div className="mx-auto px-4 justify-center text-center bg-gray-50">
-        <span className="text-lg font-semibold text-blue-800 mb-4 block">
-          OUR LATEST SERVICES
-        </span>
-        <h2 className="text-5xl font-bold text-black leading-tight">We Offer Better Solution <br/> For Your IT Business</h2>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-40 py-16 ">
-      {services1.map((service, index) => (
-        // Each service item card. `mx-auto` for centering when grid items don't fill the row.
-        <div
-          key={index}
-          className="service-item-two group w-full max-w-sm mx-auto p-8 rounded-lg shadow-md bg-blue-50
-                     mt-6 hover:shadow-lg transition-all duration-300" // Example hover background for the entire card
-        >
-          {/* Icon container */}
-            <service.icon size={30} className={`${service.textColor} mb-3`}/>
-          {/* Title */}
-          <h3 className="title text-2xl font-bold text-gray-800 mb-4"> {/* h3 with larger font size */}
-            <Link
-              href={service.link}
-            >
-              {service.title}
-            </Link>
-          </h3>
-          {/* Description */}
-          <p className={`text-gray-600 text-base leading-relaxed mb-4'}`}>
-            {service.description}
-          </p>
+      <div className="py-12 sm:py-16 md:py-20 bg-gray-50"> {/* Responsive vertical padding */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"> {/* Responsive horizontal padding and centering */}
+          <span className="text-base sm:text-lg font-semibold text-blue-800 mb-2 sm:mb-4 block"> {/* Responsive font size for SERVICES */}
+            OUR LATEST SERVICES
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black leading-tight"> {/* Responsive font size and line height */}
+            We Offer Better Solution <br className="hidden sm:inline" /> For Your IT Business
+          </h2>
         </div>
-      ))}
-    </div>
-    </div>
+
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16"> {/* Responsive grid, gaps, and padding */}
+          {services1.map((service, index) => (
+            <div
+              key={index}
+              className="service-item-two group w-full max-w-sm mx-auto p-6 sm:p-8 rounded-lg shadow-md bg-white
+                         mt-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2
+                         text-left flex flex-col justify-start" // Added flex for consistent alignment, text-left
+            >
+              {/* Icon */}
+              {/* Responsive icon size: default 24px, sm: 28px, md: 30px */}
+              <service.icon size={24} className={`sm:w-7 sm:h-7 md:w-8 md:h-8 ${service.textColor} mb-3`} />
+              
+              {/* Title */}
+              <h3 className="title text-xl sm:text-2xl font-bold text-gray-800 mb-2"> {/* Responsive font size for title */}
+                <Link href={service.link} className="hover:text-blue-600 transition-colors duration-300">
+                  {service.title}
+                </Link>
+              </h3>
+              
+              {/* Description */}
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-0 flex-grow"> {/* Responsive font size, flex-grow */}
+                {service.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
     
     <PortfolioSection />
@@ -546,6 +554,40 @@ export default function Home() {
           ))}
       </div>
     </div>
+    </section>
+
+    <section
+      className="relative bg-cover bg-center py-12 md:py-20 lg:py-24"
+      style={{ backgroundImage: "url('/members/b3.jpeg')" }}
+    >
+      {/* Blue overlay */}
+      <div className="absolute inset-0 bg-blue-900 opacity-70 z-0"></div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 text-center md:text-left">
+          {/* Text */}
+          <div className="text-white">
+            <span className="text-sm uppercase tracking-wider text-blue-200 mb-2 block">
+              Call To Action
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug">
+              Let’s Discuss With Us Your Estimate.
+            </h2>
+          </div>
+
+          {/* Button */}
+          <div className="flex-shrink-0">
+            <Link
+              href="#"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-600 text-sm sm:text-base font-semibold rounded-md hover:bg-blue-600 hover:text-white transition-colors duration-300"
+            >
+              <MessageSquare className="w-5 h-5" />
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section>

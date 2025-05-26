@@ -173,9 +173,9 @@ const PortfolioSection = () => {
                                             className="transform group-hover:scale-105 transition-transform duration-300 ease-in-out" // Subtle zoom on hover
                                         />
                                     </div>
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent bg-opacity-75 flex flex-col items-center justify-end text-white p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent bg-opacity-75 flex flex-col items-center justify-end text-white p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out hover:bg-opacity-10 hover:backdrop-blur-sm">
                                         <div className="text-center">
-                                            <span className="text-sm text-gray-300 font-medium mb-1 block">{item.category}</span>
+                                            <span className="text-sm text-white font-medium mb-1 block">{item.category}</span>
                                             <h3 className="text-2xl font-bold mb-2 leading-tight">{item.title.replace('<br>', ' ')}</h3>
                                             <p className="text-sm text-gray-200 mb-4 line-clamp-3">{item.description}</p>
                                             <a href={item.link} className="inline-flex items-center text-blue-300 hover:text-blue-100 font-semibold transition duration-300 ease-in-out">

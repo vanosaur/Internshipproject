@@ -17,9 +17,9 @@ const Header = () => {
   return (
     <header className="fixed bg-white shadow-md z-50 w-full">
       <div>
-        <div className="flex items-center justify-between px-4 container-1470 mx-auto">
+        <div className="flex items-center justify-between px-4 mx-auto sm:px-6">
           {/* Header Left - Logo */}
-          <div className="header-left m-8">
+          <div className="header-left my-4 md:my-6">
             <div className="site-logo">
               <Link href="/">
                 <Image src="/logo.jpeg" alt="Omnivus" width={150} height={40} />
@@ -28,7 +28,7 @@ const Header = () => {
           </div>
 
           {/* Header Right */}
-          <div className="header-right flex items-center justify-end space-x-5 w-full lg:w-auto pr-4">
+          <div className="header-right flex items-center justify-end space-x-4 sm:space-x-6 lg:space-x-8 w-auto">
             {/* Site Nav Menu (Always visible on large screens, hidden on small screens) */}
             <div className="site-nav-menu hidden lg:block relative w-full lg:w-auto bg-white lg:bg-transparent shadow-lg lg:shadow-none z-40">
               <ul className="primary-menu flex flex-col lg:flex-row lg:space-x-8 p-4 text-lg">
@@ -99,7 +99,7 @@ const Header = () => {
               <div className="flex items-center justify-center h-8 w-8">
                 <Menu size={30} color="blue" />
               </div>
-              <div className="navbar-btn">
+              <div className="navbar-btn hidden lg:block">
                 <a href="#" className="inline-flex items-center px-6 py-5 bg-blue-700 text-white text-sm font-semibold rounded-md hover:bg-white transition-colors duration-300 border-2 border-blue-700 hover:text-blue-600">
                   Free Consulting <ArrowRight size={16} className="ml-2" />
                 </a>
@@ -110,6 +110,8 @@ const Header = () => {
       </div>
 
     </header>
+
+    
   );
 };
 
