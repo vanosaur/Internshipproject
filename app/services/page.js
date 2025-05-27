@@ -73,11 +73,11 @@ function Services() {
   return (
     <div>
       <Header />
-      <div className="bg-white py-24 md:py-32 lg:py-48 flex items-center justify-center min-h-[50vh]">
+      <div className="bg-white py-24 md:py-32 lg:py-48 flex items-center justify-center min-h-[50vh] dark:bg-gray-900 dark:text-white">
         {/* Adjusted padding and minimum height for responsiveness */}
         <div className="text-center px-4 pt-14">
           {/* Added text-center and horizontal padding */}
-          <h1 className="text-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-2">
+          <h1 className="text-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-2 dark:text-white">
             Services
           </h1>
           {/* Responsive font sizes */}
@@ -88,7 +88,7 @@ function Services() {
         </div>
       </div>
 
-      <section className="pb-16 sm:pb-20 md:pb-24 bg-white lg:pl-40 lg:pr-40"> {/* Responsive vertical padding */}
+      <section className="pb-16 sm:pb-20 md:pb-24 bg-white lg:pl-40 lg:pr-40 dark:bg-gray-900 dark:text-white" > {/* Responsive vertical padding */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8"> {/* Responsive horizontal padding */}
         <div className="flex flex-wrap justify-center -m-4"> {/* Negative margin to counteract p-4 on columns */}
           {services.map((service, index) => (
@@ -128,9 +128,9 @@ function Services() {
     </section>
     
 
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-blue-50">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-blue-50 dark:bg-gray-900 dark:text-white">
       {/* Container to limit width and add responsive horizontal padding */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
         {/* Header and Toggle Buttons */}
         <div className="flex flex-col md:flex-row items-center justify-between mb-8 sm:mb-10 md:mb-12 text-center md:text-left">
           <div className="max-w-xl">
@@ -139,7 +139,7 @@ function Services() {
               PLANS ______
             </span>
             {/* Responsive font sizes for main heading */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mt-2 text-black">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mt-2 text-black dark:text-white">
               Here are our plans
             </h2>
           </div>
@@ -193,11 +193,11 @@ function Services() {
               <span className="text-xs sm:text-sm text-gray-400 mt-2 group-hover:text-white">
                 {plan.duration}
               </span>
-              <span className="text-gray-400 my-4 group-hover:text-white">
+              <span className="text-gray-400 my-4 group-hover:text-white dark:text-white">
                 _____
               </span>
               {/* Responsive font size for description, flex-grow for consistent height */}
-              <p className="text-xs sm:text-sm mb-6 text-gray-400 group-hover:text-white flex-grow">
+              <p className="text-xs sm:text-sm mb-6 text-gray-400 group-hover:text-white flex-grow dark:text-white">
                 The functional goal of technical content is to help people use
                 a product successfully.
               </p>

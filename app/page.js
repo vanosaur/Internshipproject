@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PortfolioSection from "@/components/Portfoliosection";
 
+
 export default function Home() {
 
   const newsData = [
@@ -247,8 +248,9 @@ export default function Home() {
 
   return (
     <div>
+      
       <Header />
-      <section className="relative bg-blue-100 py-32 md:py-48">
+      <section className="relative bg-blue-100 py-32 md:py-48 dark:bg-gray-900 dark:text-white">
 
       <div className="container-1470 mx-auto px-4 relative z-10">
         
@@ -259,15 +261,15 @@ export default function Home() {
             {/* Banner text content */}
             <div className="banner-content ">
               {/* Title tag/category */}
-              <span className="text-black font-semibold text-2xl mb-8 block ml-5">
+              <span className="text-black font-semibold text-2xl mb-8 block ml-5 dark:text-white">
                 IT Business Consulting
               </span>
               {/* Main heading with responsive font sizes */}
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-800 leading-tight mb-14 ml-3">
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-800 leading-tight mb-14 ml-3 dark:text-white">
                 Best IT Solutions <br className="hidden md:block"/> Provider Agency
               </h1>
               {/* Description paragraph */}
-              <p className="text-black text-lg md:text-xl leading-relaxed mb-14 ml-5 font-semibold">
+              <p className="text-black text-lg md:text-xl leading-relaxed mb-14 ml-5 font-semibold dark:text-gray-400">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremda tium totam rem aperiam eaque ipsa quae ab illo inventore veritatis
               </p>
               {/* Call-to-action button */}
@@ -309,12 +311,12 @@ export default function Home() {
     </section>
 
     <section>
-      <div className="py-12 sm:py-16 md:py-20 bg-gray-50"> {/* Adjusted vertical padding */}
+      <div className="py-12 sm:py-16 md:py-20 bg-gray-50 dark:bg-gray-900 dark:text-white"> {/* Adjusted vertical padding */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"> {/* Centering container, responsive padding */}
           <span className="text-base sm:text-lg font-semibold text-blue-800 mb-2 sm:mb-4 block">
             SERVICES
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-8"> {/* Responsive font sizes */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-8 dark:text-white"> {/* Responsive font sizes */}
             What We Do
           </h2>
         </div>
@@ -351,8 +353,8 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="feature-section section-gap bg-blue-50 py-16 md:py-24">
-      <div className="container mx-auto px-4 max-w-7xl"> {/* Using max-w-7xl for a standard container */}
+    <section className="feature-section section-gap bg-blue-50 py-16 md:py-24 dark:bg-gray-900 dark:text-white">
+      <div className="container mx-auto px-4 max-w-7xl "> {/* Using max-w-7xl for a standard container */}
         {/* Responsive row: flex column on small, flex row on large. Centered vertically. */}
         <div className="flex flex-col lg:flex-row justify-center items-center gap-12 lg:gap-24">
 
@@ -392,21 +394,23 @@ export default function Home() {
                 <span className="title-tag text-blue-900 font-semibold text-base mb-2 block">
                   CORE FEATURES
                 </span>
-                <h2 className="title text-5xl md:text-5xl font-bold text-gray-800 leading-tight">
+                <h2 className="title text-5xl md:text-5xl font-bold text-gray-800 leading-tight dark:text-white">
                   Get More Good Experience.
                 </h2>
               </div>
               {/* Big Text Paragraph */}
-              <p className="big-text text-xl text-gray-700 mb-6 font-medium"> {/* mb-30 approx mb-6 or mb-8 */}
+              
+              <p className="big-text text-xl text-gray-700 mb-6 font-medium  dark:text-gray-400"> {/* mb-30 approx mb-6 or mb-8 */}
                 Our knowledge of computers will help us
               </p>
               {/* Main Description */}
-              <p className="text-gray-600 text-base leading-relaxed mb-8">
+              <p className="text-gray-600 text-base leading-relaxed mb-8  dark:text-white">
                 Does any industry face a more complex audience journey and marketing sales process than B2B
                 technology? Consider the number of people who influence a sale, the length of the
                 decision-making cycle, the competing interests of the people who purchase, implement,
                 manage, and use the technology. It’s a lot meaningful content here.
               </p>
+             
               {/* Feature Buttons */}
               <ul className="feature-btn flex flex-wrap gap-4 mt-8"> {/* mt-30 approx mt-8 */}
                 <li>
@@ -427,13 +431,13 @@ export default function Home() {
     </section>
 
 
-    <section>
-      <div className="py-12 sm:py-16 md:py-20 bg-gray-50"> {/* Responsive vertical padding */}
+    <section> 
+      <div className="py-12 sm:py-16 md:py-20 bg-gray-50 dark:bg-gray-900 dark:text-white"> {/* Responsive vertical padding */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"> {/* Responsive horizontal padding and centering */}
           <span className="text-base sm:text-lg font-semibold text-blue-800 mb-2 sm:mb-4 block"> {/* Responsive font size for SERVICES */}
             OUR LATEST SERVICES
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black leading-tight"> {/* Responsive font size and line height */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black leading-tight  dark:text-white"> {/* Responsive font size and line height */}
             We Offer Better Solution <br className="hidden sm:inline" /> For Your IT Business
           </h2>
         </div>
@@ -469,13 +473,13 @@ export default function Home() {
     
     <PortfolioSection />
 
-    <section>
-      <div className="py-20 bg-gray-50">
-      <div className="mx-auto px-4 justify-center text-center bg-gray-50">
-        <span className="text-lg font-semibold text-blue-800 mb-4 block">
+    <section className="dark:bg-gray-900 dark:text-white">
+      <div className="py-20 bg-gray-50 dark:bg-gray-900 dark:text-white">
+      <div className="mx-auto px-4 justify-center text-center bg-gray-50 dark:bg-gray-900 dark:text-white">
+        <span className="text-lg font-semibold text-blue-800 mb-4 block ">
           OUR TEAM MEMBERS
         </span>
-        <h2 className="text-5xl font-bold text-black leading-tight">Meet our Exclusive <br/>Leadership</h2>
+        <h2 className="text-5xl font-bold text-black leading-tight  dark:text-white">Meet our Exclusive <br/>Leadership</h2>
       </div>
 
       <div className="container mx-auto px-4 py-16">
@@ -520,12 +524,12 @@ export default function Home() {
     </section>
 
 
-    <section className="bg-blue-50 py-16">
+    <section className="bg-blue-50 py-16 dark:bg-gray-900 dark:text-white">
       <div className="mx-auto px-4 justify-center text-center">
         <span className="text-lg font-semibold text-blue-800 mb-4 block">
           CLIENT TESTIMONIALS
         </span>
-        <h2 className="text-5xl font-bold text-black">What Our Clients Says</h2>
+        <h2 className="text-5xl font-bold text-black  dark:text-white">What Our Clients Says</h2>
       </div>
 
       <div className="container mx-auto px-4">
@@ -557,7 +561,7 @@ export default function Home() {
     </section>
 
     <section
-      className="relative bg-cover bg-center py-12 md:py-20 lg:py-24"
+      className="relative bg-cover bg-center py-12 md:py-20 lg:py-24 "
       style={{ backgroundImage: "url('/members/b3.jpeg')" }}
     >
       {/* Blue overlay */}
@@ -591,12 +595,12 @@ export default function Home() {
     </section>
 
     <section>
-      <div className="py-20 bg-gray-50">
-      <div className="mx-auto px-4 justify-center text-center bg-gray-50">
+      <div className="py-20 bg-gray-50 dark:bg-gray-900 dark:text-white">
+      <div className="mx-auto px-4 justify-center text-center bg-gray-50 dark:bg-gray-900 dark:text-white">
         <span className="text-lg font-semibold text-blue-800 mb-4 block">
           LATEST NEWS
         </span>
-        <h2 className="text-5xl font-bold text-black leading-tight">Read Our Latest <br/> News & Blog</h2>
+        <h2 className="text-5xl font-bold text-black leading-tight  dark:text-white">Read Our Latest <br/> News & Blog</h2>
       </div>
 
       <div className="container mx-auto px-4 py-16">

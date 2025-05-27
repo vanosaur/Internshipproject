@@ -1,117 +1,91 @@
-'use client'; 
-
+'use client';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleTheme } from '../redux/themeSlice';
 
-// Import Lucide icons
 import {
   X,
   Search,
   ShoppingCart,
-  Plus,
   Menu,
-  ArrowRight
+  ArrowRight,
+  Sun,
+  Moon,
 } from 'lucide-react';
 
 const Header = () => {
+  const mode = useSelector((state) => state.theme.mode);
+  const dispatch = useDispatch();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <header className="fixed bg-white shadow-md z-50 w-full">
-      <div>
-        <div className="flex items-center justify-between px-4 mx-auto sm:px-6">
-          {/* Header Left - Logo */}
-          <div className="header-left my-4 md:my-6">
-            <div className="site-logo">
-              <Link href="/">
-                <Image src="/logo.jpeg" alt="Omnivus" width={150} height={40} />
-              </Link>
-            </div>
-          </div>
+    <header className={`fixed w-full z-50 shadow-md ${mode === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
+      <div className="flex items-center justify-between px-4 mx-auto sm:px-6">
+        {/* Left - Logo */}
+        <div className="my-4 md:my-6">
+          <Link href="/">
+            <Image src="/logo.jpeg" alt="Omnivus" width={150} height={40} />
+          </Link>
+        </div>
 
-          {/* Header Right */}
-          <div className="header-right flex items-center justify-end space-x-4 sm:space-x-6 lg:space-x-8 w-auto">
-            {/* Site Nav Menu (Always visible on large screens, hidden on small screens) */}
-            <div className="site-nav-menu hidden lg:block relative w-full lg:w-auto bg-white lg:bg-transparent shadow-lg lg:shadow-none z-40">
-              <ul className="primary-menu flex flex-col lg:flex-row lg:space-x-8 p-4 text-lg">
-                {/* Home */}
-                <li className="relative group lg:current"> {/* 'current' class for active state */}
-                  <Link href="/" className="block py-2 lg:py-0 text-gray-800 hover:text-blue-600 font-semibold">
-                    Home
-                  </Link>
-                  
-                  {/* Plus icon for main submenu (mobile only, static) */}
-                  <span className="dd-trigger absolute right-2 top-1/2 -translate-y-1/2 lg:hidden">
-                    <Plus size={16} color="currentColor" />
-                  </span>
-                </li>
+        {/* Right - Navigation and icons */}
+        <div className="flex items-center space-x-6">
+          {/* Desktop nav */}
+          <ul className="hidden lg:flex space-x-8 text-lg font-semibold">
+            <li><Link href="/" className="hover:text-blue-600">Home</Link></li>
+            <li><Link href="/services" className="hover:text-blue-600">Services</Link></li>
+            <li><Link href="/blog" className="hover:text-blue-600">Blog</Link></li>
+          </ul>
 
+          {/* Dark Mode Toggle */}
+          <button onClick={() => dispatch(toggleTheme())}>
+            {mode === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
 
-                {/* Services */}
-                <li className="relative group">
-                  <Link href="/services" className="block py-2 lg:py-0 text-gray-800 hover:text-blue-600 font-semibold">
-                    Services
-                  </Link>
-                  
-                  <span className="dd-trigger absolute right-2 top-1/2 -translate-y-1/2 lg:hidden">
-                    <Plus size={16} color="currentColor" />
-                  </span>
-                </li>
+          {/* Icons */}
+          <a href="#" className="text-gray-600 hover:text-blue-600 dark:text-white">
+            <ShoppingCart size={20} />
+          </a>
+          <a href="#" className="text-gray-600 hover:text-blue-600 dark:text-white">
+            <Search size={20} />
+          </a>
 
+          {/* Mobile Menu Toggle */}
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden text-blue-600">
+            {mobileMenuOpen ? <X size={30} /> : <Menu size={30} />}
+          </button>
 
-                {/* Blog */}
-                <li className="relative group">
-                  <Link href="/blog" className="block py-2 lg:py-0 text-gray-800 hover:text-blue-600 font-semibold">
-                    Blog
-                  </Link>
-                  <span className="dd-trigger absolute right-2 top-1/2 -translate-y-1/2 lg:hidden">
-                    <Plus size={16} color="currentColor" />
-                  </span>
-                </li>
-
-              </ul>
-              {/* Mobile Close Button - always hidden as there's no JS to show the menu */}
-              <a href="#" className="nav-close absolute top-4 right-4 hidden text-gray-600 hover:text-gray-900">
-                <X size={24} color="currentColor" />
-              </a>
-            </div>
-
-            {/* Header icons */}
-            <div className="header-extra flex items-center space-x-8">
-              <div className="shoping-mini-cart">
-                <a href="#" className="cart-icon text-gray-600 hover:text-blue-600">
-                  <ShoppingCart size={20} color="currentColor" />
-                </a>
-              </div>
-              <div className="search-widget relative">
-                <a href="#" className="search-icon text-gray-600 hover:text-blue-600">
-                  <Search size={20} color="currentColor" />
-                </a>
-                {/* Search */}
-                <div className="search-form absolute top-full right-0 bg-white shadow-lg p-4 rounded-md w-64 hidden">
-                  <form onSubmit={(e) => e.preventDefault()}>
-                    <input type="search" placeholder="Type keywords & hit enter" className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                  </form>
-                  <a href="#" className="search-close absolute top-2 right-2 text-gray-600 hover:text-gray-900">
-                    <X size={20} color="currentColor" />
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-center justify-center h-8 w-8">
-                <Menu size={30} color="blue" />
-              </div>
-              <div className="navbar-btn hidden lg:block">
-                <a href="#" className="inline-flex items-center px-6 py-5 bg-blue-700 text-white text-sm font-semibold rounded-md hover:bg-white transition-colors duration-300 border-2 border-blue-700 hover:text-blue-600">
-                  Free Consulting <ArrowRight size={16} className="ml-2" />
-                </a>
-              </div>
-            </div>
-          </div>
+          {/* CTA button (only on large screens) */}
+          <a
+            href="#"
+            className="hidden lg:inline-flex items-center px-6 py-2 bg-blue-700 text-white text-sm font-semibold rounded-md hover:bg-white hover:text-blue-600 border-2 border-blue-700 transition"
+          >
+            Free Consulting <ArrowRight size={16} className="ml-2" />
+          </a>
         </div>
       </div>
 
+      {/* Mobile nav dropdown */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden px-4 pb-4">
+          <ul className="flex flex-col space-y-4 text-lg font-semibold">
+            <li><Link href="/" onClick={() => setMobileMenuOpen(false)} className="hover:text-blue-600">Home</Link></li>
+            <li><Link href="/services" onClick={() => setMobileMenuOpen(false)} className="hover:text-blue-600">Services</Link></li>
+            <li><Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="hover:text-blue-600">Blog</Link></li>
+            <li>
+              <a
+                href="#"
+                className="inline-flex items-center px-4 py-2 bg-blue-700 text-white text-sm font-semibold rounded-md hover:bg-white hover:text-blue-600 border-2 border-blue-700 transition"
+              >
+                Free Consulting <ArrowRight size={16} className="ml-2" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
-
-    
   );
 };
 

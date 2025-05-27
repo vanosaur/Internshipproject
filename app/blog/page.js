@@ -27,11 +27,11 @@ function Blog() {
   return (
     <div>
       <Header/>
-      <div className="bg-white py-24 md:py-32 lg:py-48 flex items-center justify-center min-h-[50vh]">
+      <div className="bg-white py-24 md:py-32 lg:py-48 flex items-center justify-center min-h-[50vh] dark:bg-gray-900 dark:text-white">
         {/* Adjusted padding and minimum height for responsiveness */}
         <div className="text-center px-4 pt-14">
           {/* Added text-center and horizontal padding */}
-          <h1 className="text-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-2">
+          <h1 className="text-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-2 dark:text-white">
             News Standard
           </h1>
           {/* Responsive font sizes */}
@@ -42,7 +42,7 @@ function Blog() {
         </div>
       </div>
     
-      <div className="bg-white py-12 sm:py-16 md:py-20 lg:py-24 lg:p-36">
+      <div className="bg-white py-12 sm:py-16 md:py-20 lg:py-24 lg:p-36 dark:bg-gray-900 dark:text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8 lg:gap-10">
         {/* Main Blog Content Area */}
         {/* Takes full width on small screens, 2/3 width on large screens */}
