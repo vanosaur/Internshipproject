@@ -28,7 +28,7 @@ import Footer from '@/components/Footer';
 function Blog() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className='bg-white'>
+    <div className='bg-white dark:bg-gray-900'>
       <Header/>
 
       <ScrollFadeIn>
