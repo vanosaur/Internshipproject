@@ -348,85 +348,73 @@ export default function Home() {
     </section>
     </ScrollFadeIn>
 
-    <ScrollFadeIn>
     <section className="feature-section section-gap bg-blue-50 py-16 md:py-24 dark:bg-gray-900 dark:text-white">
-      <div className="container mx-auto px-4 max-w-7xl "> {/* Using max-w-7xl for a standard container */}
-        {/* Responsive row: flex column on small, flex row on large. Centered vertically. */}
-        
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-12 lg:gap-24">
-
-          {/* Left column: Image Gallery */}
-          <div className="w-full lg:w-1/2 md:max-w-xl lg:max-w-none"> {/* Full width on small, capped on medium, 1/2 on large */}
-            <div className="tile-gallery-one relative"> {/* Make this relative for absolute positioning of children if needed */}
-              {/* Image One */}
-              <div className="img-one z-10"> {/* Added shadow and rounding */}
-                {/* Adjust width/height as needed. Assuming aspect-video or specific dimensions */}
-                <Image
-                  src="/tile-gallery-01.jpeg" // Ensure path is correct
-                  alt="Feature Image One"
-                  width={600} // Example width
-                  height={400} // Example height, adjust as per your image aspect ratio
-                  className="h-auto object-cover border-4 border-white " 
-                />
-              </div>
-              {/* Image Two - positioned for a "tiled" effect, might need fine-tuning with top/right values */}
-              <div className="img-two absolute bottom-[-1rem] right-[-1rem] md:bottom-[-2rem] md:right-[-3rem] z-20 shadow-xl
-                              hidden sm:block"> {/* Hidden on very small screens, block on sm+ */}
-                <Image
-                  src="/tile-gallery-02.jpeg" // Ensure path is correct
-                  alt="Feature Image Two"
-                  width={500} // Example width, adjust as needed
-                  height={400} // Example height
-                  className="w-full h-auto object-cover border-4 border-white"
-                />
-              </div>
+    <div className="container mx-auto px-4 max-w-7xl ">
+    <SlideInPair
+      leftContent={
+        <div className="w-full md:max-w-xl"> 
+          <div className="tile-gallery-one relative"> 
+            <div className="img-one z-10"> 
+              <Image
+                src="/tile-gallery-01.jpeg"
+                alt="Feature Image One"
+                width={600}
+                height={400}
+                className="h-auto object-cover border-4 border-white " 
+              />
             </div>
-          </div>
-
-          {/* Right column: Feature Text Block */}
-          <div className="w-full lg:w-1/2 md:max-w-xl lg:max-w-none mt-10 lg:mt-0"> {/* Added top margin for mobile stacking */}
-            <div className="feature-text-block">
-              {/* Section Title */}
-              <div className="section-title mb-6"> {/* mb-20 approx mb-6 or mb-8 */}
-                <span className="title-tag text-blue-900 font-semibold text-base mb-2 block">
-                  CORE FEATURES
-                </span>
-                <h2 className="title text-5xl md:text-5xl font-bold text-gray-800 leading-tight dark:text-white">
-                  Get More Good Experience.
-                </h2>
-              </div>
-              {/* Big Text Paragraph */}
-              
-              <p className="big-text text-xl text-gray-700 mb-6 font-medium  dark:text-gray-400"> {/* mb-30 approx mb-6 or mb-8 */}
-                Our knowledge of computers will help us
-              </p>
-              {/* Main Description */}
-              <p className="text-gray-600 text-base leading-relaxed mb-8  dark:text-white">
-                Does any industry face a more complex audience journey and marketing sales process than B2B
-                technology? Consider the number of people who influence a sale, the length of the
-                decision-making cycle, the competing interests of the people who purchase, implement,
-                manage, and use the technology. It’s a lot meaningful content here.
-              </p>
-             
-              {/* Feature Buttons */}
-              <ul className="feature-btn flex flex-wrap gap-4 mt-8"> {/* mt-30 approx mt-8 */}
-                <li>
-                  <Link href="/about" className="main-btn inline-flex items-center px-8 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition-colors duration-300">
-                    Learn More
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" className="main-btn main-btn-2 inline-flex items-center px-8 py-3 bg-white border border-blue-600 text-blue-600 font-semibold rounded-md hover:bg-blue-900 hover:text-white transition-colors duration-300">
-                    <Video size={20} className="mr-2" /> Intro Video
-                  </Link>
-                </li>
-              </ul>
+            <div className="img-two absolute bottom-[-1rem] right-[-1rem] md:bottom-[-2rem] md:right-[-3rem] z-20 shadow-xl hidden sm:block">
+              <Image
+                src="/tile-gallery-02.jpeg"
+                alt="Feature Image Two"
+                width={500}
+                height={400}
+                className="w-full h-auto object-cover border-4 border-white"
+              />
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    </ScrollFadeIn>
+      }
+      rightContent={
+        <div className="w-full md:max-w-xl lg:max-w-none mt-10 lg:mt-0"> 
+          <div className="">
+            <div className="section-title mb-6"> 
+              <span className="title-tag text-blue-900 font-semibold text-base mb-2 block">
+                CORE FEATURES
+              </span>
+              <h2 className="title text-5xl md:text-5xl font-bold text-gray-800 leading-tight dark:text-white">
+                Get More Good Experience.
+              </h2>
+            </div>
+            <p className="big-text text-xl text-gray-700 mb-6 font-medium  dark:text-gray-400"> 
+              Our knowledge of computers will help us
+            </p>
+            <p className="text-gray-600 text-base leading-relaxed mb-8  dark:text-white">
+              Does any industry face a more complex audience journey and marketing sales process than B2B
+              technology? Consider the number of people who influence a sale, the length of the
+              decision-making cycle, the competing interests of the people who purchase, implement,
+              manage, and use the technology. It’s a lot meaningful content here.
+            </p>
+            <ul className="feature-btn flex flex-wrap gap-4 mt-8"> 
+              <li>
+                <Link href="/about" className="main-btn inline-flex items-center px-8 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition-colors duration-300">
+                  Learn More
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="main-btn main-btn-2 inline-flex items-center px-8 py-3 bg-white border border-blue-600 text-blue-600 font-semibold rounded-md hover:bg-blue-900 hover:text-white transition-colors duration-300">
+                  <Video size={20} className="mr-2" /> Intro Video
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      }
+    />
+  </div>
+</section>
+
+   
     
 
     <ScrollFadeIn>
