@@ -5,6 +5,8 @@ import { ArrowRight ,ArrowLeft, Laptop,Fingerprint,Clipboard,Database,Video,Face
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PortfolioSection from "@/components/Portfoliosection";
+import ScrollFadeIn from '@/components/ScrollFadeIn';
+import SlideInPair from '@/components/SlideInPair';
 
 
 export default function Home() {
@@ -247,59 +249,48 @@ export default function Home() {
   ];
 
   return (
-    <div>
+    <div className="bg-gray-50">
       
       <Header />
-      <section className="relative bg-blue-100 py-32 md:py-48 dark:bg-gray-900 dark:text-white">
 
-      <div className="container-1470 mx-auto px-4 relative z-10">
         
-        <div className="flex flex-col lg:flex-row items-center justify-between ml-">
+      <section className="relative bg-blue-100 py-32 md:py-48 dark:bg-gray-900 dark:text-white">
+      <div className="container-1470 mx-auto px-4 relative z-10">
 
-          {/* Left column: Text content (7/12 width on large screens, full width on smaller) */}
-          <div className="lg:w-7/12 text-center lg:text-left mb-10 lg:mb-0 pr-0 lg:pr-16">
-            {/* Banner text content */}
-            <div className="banner-content ">
-              {/* Title tag/category */}
+        <SlideInPair
+          leftContent={
+            <div className="text-center lg:text-left pr-0 lg:pr-16">
               <span className="text-black font-semibold text-2xl mb-8 block ml-5 dark:text-white">
                 IT Business Consulting
               </span>
-              {/* Main heading with responsive font sizes */}
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-800 leading-tight mb-14 ml-3 dark:text-white">
-                Best IT Solutions <br className="hidden md:block"/> Provider Agency
+                Best IT Solutions <br className="hidden md:block" /> Provider Agency
               </h1>
-              {/* Description paragraph */}
               <p className="text-black text-lg md:text-xl leading-relaxed mb-14 ml-5 font-semibold dark:text-gray-400">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremda tium totam rem aperiam eaque ipsa quae ab illo inventore veritatis
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque totam rem aperiam eaque ipsa quae ab illo inventore veritatis.
               </p>
-              {/* Call-to-action button */}
               <Link href="/services" className="inline-flex items-center px-8 py-6 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-900 transition-colors duration-300 text-md ml-5">
                 Our Services <ArrowRight size={20} className="ml-3" />
               </Link>
             </div>
-          </div>
-
-          {/* Right column: Image (5/12 width on large screens, hidden on smaller) */}
-          <div className="lg:w-5/12 hidden lg:block flex justify-center lg:justify-end relative pl-24">
-             {/* Hexagonal shape for the image container */}
+          }
+          rightContent={
             <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] bg-gray-200 rounded-lg overflow-hidden
-                          before:content-[''] before:absolute before:inset-0 before:bg-blue-500 before:z-0
-                          clip-path-polygon-hex">
-              {/* The actual image */}
+                            before:content-[''] before:absolute before:inset-0 before:bg-blue-500 before:z-0
+                            clip-path-polygon-hex">
               <Image
-                src="/banner-img.jpeg" // Ensure this path is correct relative to your public folder
+                src="/banner-img.jpeg"
                 alt="IT Solutions Consulting"
-                layout="fill" // Makes the image fill the parent container
-                objectFit="cover" // Covers the container while maintaining aspect ratio
-                className="z-10 relative" // Ensure image is above the pseudo-element if used
+                layout="fill"
+                objectFit="cover"
+                className="z-10 relative"
               />
             </div>
-            
-          </div>
-        </div>
+          }
+        />
       </div>
 
-      {/* Static Slider navigation arrows (non-functional in this static version) */}
+      {/* Static Slider Arrows */}
       <div className="absolute bottom-5 right-5 flex space-x-2 z-20">
         <button className="bg-white p-3 rounded-full shadow-md text-gray-600 hover:text-blue-600">
           <ArrowLeft size={20} />
@@ -309,7 +300,10 @@ export default function Home() {
         </button>
       </div>
     </section>
-
+      
+    
+    
+    <ScrollFadeIn>
     <section>
       <div className="py-12 sm:py-16 md:py-20 bg-gray-50 dark:bg-gray-900 dark:text-white"> {/* Adjusted vertical padding */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"> {/* Centering container, responsive padding */}
@@ -352,10 +346,13 @@ export default function Home() {
         </div>
       </div>
     </section>
+    </ScrollFadeIn>
 
+    <ScrollFadeIn>
     <section className="feature-section section-gap bg-blue-50 py-16 md:py-24 dark:bg-gray-900 dark:text-white">
       <div className="container mx-auto px-4 max-w-7xl "> {/* Using max-w-7xl for a standard container */}
         {/* Responsive row: flex column on small, flex row on large. Centered vertically. */}
+        
         <div className="flex flex-col lg:flex-row justify-center items-center gap-12 lg:gap-24">
 
           {/* Left column: Image Gallery */}
@@ -429,8 +426,10 @@ export default function Home() {
         </div>
       </div>
     </section>
+    </ScrollFadeIn>
+    
 
-
+    <ScrollFadeIn>
     <section> 
       <div className="py-12 sm:py-16 md:py-20 bg-gray-50 dark:bg-gray-900 dark:text-white"> {/* Responsive vertical padding */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"> {/* Responsive horizontal padding and centering */}
@@ -470,6 +469,7 @@ export default function Home() {
         </div>
       </div>
     </section>
+    </ScrollFadeIn>
     
     <PortfolioSection />
 
@@ -642,6 +642,7 @@ export default function Home() {
     </section>
 
     <Footer/>
+    
     </div>
   );
 }

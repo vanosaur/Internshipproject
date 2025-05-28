@@ -4,6 +4,9 @@ import Header from "@/components/Header";
 import Image from "next/image";
 import { useState } from "react";
 import Footer from "@/components/Footer";
+import ScrollFadeIn from '@/components/ScrollFadeIn';
+import SlideInPair from '@/components/SlideInPair';
+
 
 import { Eye, Gavel, MapPin, Globe, Laptop2, Umbrella } from "lucide-react";
 
@@ -71,8 +74,10 @@ function Services() {
   ];
 
   return (
-    <div>
+    <div className="bg-white">
       <Header />
+      
+      <ScrollFadeIn>
       <div className="bg-white py-24 md:py-32 lg:py-48 flex items-center justify-center min-h-[50vh] dark:bg-gray-900 dark:text-white">
         {/* Adjusted padding and minimum height for responsiveness */}
         <div className="text-center px-4 pt-14">
@@ -87,7 +92,9 @@ function Services() {
           {/* Responsive font sizes and separator */}
         </div>
       </div>
+      </ScrollFadeIn>
 
+      <ScrollFadeIn>
       <section className="pb-16 sm:pb-20 md:pb-24 bg-white lg:pl-40 lg:pr-40 dark:bg-gray-900 dark:text-white" > {/* Responsive vertical padding */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8"> {/* Responsive horizontal padding */}
         <div className="flex flex-wrap justify-center -m-4"> {/* Negative margin to counteract p-4 on columns */}
@@ -126,6 +133,7 @@ function Services() {
         </div>
       </div>
     </section>
+    </ScrollFadeIn>
     
 
     <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-blue-50 dark:bg-gray-900 dark:text-white">
@@ -214,7 +222,7 @@ function Services() {
       </div>
     </section>
 
-
+      
     <section className="latest-news bg-gray-900 py-12 sm:py-16 md:py-20 lg:py-24"> {/* Adjusted vertical padding */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8"> {/* Responsive horizontal padding */}
         <div className="flex justify-center">
@@ -256,6 +264,7 @@ function Services() {
         </div>
       </div>
     </section>
+
 
     <Footer/>
 

@@ -3,6 +3,9 @@ import React from 'react'
 import Header from '@/components/Header'
 import Image from 'next/image'
 import { useState } from 'react'
+import ScrollFadeIn from '@/components/ScrollFadeIn';
+import SlideInPair from '@/components/SlideInPair';
+
 import {
   Facebook,
   Twitter,
@@ -25,8 +28,10 @@ import Footer from '@/components/Footer';
 function Blog() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div>
+    <div className='bg-white'>
       <Header/>
+
+      <ScrollFadeIn>
       <div className="bg-white py-24 md:py-32 lg:py-48 flex items-center justify-center min-h-[50vh] dark:bg-gray-900 dark:text-white">
         {/* Adjusted padding and minimum height for responsiveness */}
         <div className="text-center px-4 pt-14">
@@ -41,11 +46,11 @@ function Blog() {
           {/* Responsive font sizes and separator */}
         </div>
       </div>
+      </ScrollFadeIn>
     
+      
       <div className="bg-white py-12 sm:py-16 md:py-20 lg:py-24 lg:p-36 dark:bg-gray-900 dark:text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8 lg:gap-10">
-        {/* Main Blog Content Area */}
-        {/* Takes full width on small screens, 2/3 width on large screens */}
         <div className="w-full lg:w-2/3 space-y-8 md:space-y-10">
           {/* Blog Post 1 - Standard Image Post */}
           <div className="max-w-full mx-auto bg-white overflow-hidden border-2 border-gray-200 rounded-lg shadow-md">
@@ -227,12 +232,11 @@ function Blog() {
                 </a>
               </div>
             </div>
-          </div>
+          
 
           {/* Placeholder for the last three posts */}
           {/* I've re-used the same structure as the first post for simplicity and consistency */}
-          {/* Blog Post 4 - No image by default (can be designed separately) */}
-          <div className="max-w-full mx-auto mb-10 bg-white overflow-hidden border-2 border-gray-200 rounded-lg shadow-md">
+
             {/* No image div for this example */}
             <div className="p-4 sm:p-6 md:p-8">
               <a href="#" className="text-sm text-blue-600 font-semibold mb-2 inline-block">
@@ -379,10 +383,8 @@ function Blog() {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Sidebar */}
-        {/* Takes full width on small screens, 1/3 width on large screens */}
+          </div>
+          
         <aside className="w-full lg:w-1/3 space-y-8 md:space-y-10 mt-8 lg:mt-0"> {/* Adjusted top margin for mobile, removed on desktop */}
           {/* About Me */}
           <div className="bg-white p-6 border-2 border-gray-200 rounded-lg shadow-md">
@@ -539,6 +541,7 @@ function Blog() {
             </div>
           </div>
         </aside>
+                
       </div>
       </div>
           

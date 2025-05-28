@@ -26,7 +26,7 @@ const Header = () => {
         {/* Left - Logo */}
         <div className="my-4 md:my-6">
           <Link href="/">
-            <Image src="/logo.jpeg" alt="Omnivus" width={150} height={40} />
+            <Image src="/logo.jpeg" alt="Omnivus" width={150} height={40}/>
           </Link>
         </div>
 
