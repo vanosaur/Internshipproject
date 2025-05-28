@@ -85,11 +85,11 @@ function Services() {
           <h1 className="text-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-2 dark:text-white">
             Services
           </h1>
-          {/* Responsive font sizes */}
+          
           <h2 className="text-gray-500 text-lg sm:text-xl md:text-2xl mt-2 md:mt-3 font-bold">
             Home <span className="mx-2">|</span> Services
           </h2>
-          {/* Responsive font sizes and separator */}
+          
         </div>
       </div>
       </ScrollFadeIn>
@@ -101,11 +101,6 @@ function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              // Responsive width for columns:
-              // w-full on mobile
-              // sm:w-1/2 on small screens (2 per row)
-              // lg:w-1/3 on large screens (3 per row)
-              // xl:w-1/4 on extra large screens (4 per row - if you have more items)
               className="w-full sm:w-1/2 lg:w-1/3 p-4"
             >
               <div className="relative overflow-hidden shadow-lg group">
@@ -142,17 +137,17 @@ function Services() {
         {/* Header and Toggle Buttons */}
         <div className="flex flex-col md:flex-row items-center justify-between mb-8 sm:mb-10 md:mb-12 text-center md:text-left">
           <div className="max-w-xl">
-            {/* Responsive font size for 'PLANS' text */}
+            
             <span className="text-blue-600 font-semibold text-sm sm:text-base">
               PLANS ______
             </span>
-            {/* Responsive font sizes for main heading */}
+            
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mt-2 text-black dark:text-white">
               Here are our plans
             </h2>
           </div>
           <div className="mt-6 md:mt-0"> {/* Adjust top margin for mobile, remove on desktop */}
-            {/* Flexbox for buttons: stack on small, side-by-side on medium */}
+            
             <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 bg-white p-2 sm:p-3 rounded-md shadow-sm">
               <button
                 className={`px-5 py-3 sm:px-6 sm:py-4 text-sm sm:text-md font-semibold rounded-md transition-all ${
@@ -186,30 +181,30 @@ function Services() {
               key={index}
               className="group bg-white bg-opacity-60 p-6 sm:p-8 md:p-10 lg:p-12 h-full flex flex-col justify-between items-center text-center text-black hover:bg-blue-600 hover:text-white transition-colors duration-300 rounded-lg shadow-md hover:shadow-lg"
             >
-              {/* Responsive font sizes for plan name */}
+              
               <p className="text-xs sm:text-sm font-semibold text-blue-600 group-hover:text-white">
                 {plan.name}
               </p>
-              {/* Responsive font sizes for price */}
+              
               <h4 className="text-xl sm:text-2xl font-bold mt-4 group-hover:text-white">
                 ${" "}
                 <span className="text-5xl sm:text-6xl group-hover:text-white">
                   {plan.price}
                 </span>
               </h4>
-              {/* Responsive font size for duration */}
+              
               <span className="text-xs sm:text-sm text-gray-400 mt-2 group-hover:text-white">
                 {plan.duration}
               </span>
               <span className="text-gray-400 my-4 group-hover:text-white dark:text-white">
                 _____
               </span>
-              {/* Responsive font size for description, flex-grow for consistent height */}
+              
               <p className="text-xs sm:text-sm mb-6 text-gray-400 group-hover:text-white flex-grow dark:text-white">
                 The functional goal of technical content is to help people use
                 a product successfully.
               </p>
-              {/* Responsive padding for button, added rounded corners and shadow */}
+             
               <a
                 href="#"
                 className="inline-block mt-auto bg-white text-blue-600 font-semibold px-5 py-2.5 rounded-md group-hover:bg-white group-hover:text-blue-600 transition-colors duration-300 shadow-sm hover:shadow-md"
@@ -224,22 +219,22 @@ function Services() {
 
       
     <section className="latest-news bg-gray-900 py-12 sm:py-16 md:py-20 lg:py-24"> {/* Adjusted vertical padding */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8"> {/* Responsive horizontal padding */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8"> 
         <div className="flex justify-center">
           <div className="text-center max-w-xl mb-8 sm:mb-10 md:mb-12"> {/* Adjusted bottom margin */}
-            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold mb-4">News Feeds</h2> {/* Responsive font sizes */}
-            <p className="text-gray-400 text-sm sm:text-base"> {/* Responsive font size */}
+            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold mb-4">News Feeds</h2> 
+            <p className="text-gray-400 text-sm sm:text-base"> 
               Does any industry face a more complex audience journey and marketing sales process than B2B technology.
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10"> {/* Responsive grid and gaps */}
-          {[1, 2, 3].map((imgNum, index) => ( // Using static numbers for example images
-            <div key={index} className="bg-white bg-opacity-5 transition p-4 sm:p-6 group rounded-lg"> {/* Responsive padding */}
-              {/* Image with fixed aspect ratio, consider responsive sizing for Image if needed */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10"> 
+          {[1, 2, 3].map((imgNum, index) => ( 
+            <div key={index} className="bg-white bg-opacity-5 transition p-4 sm:p-6 group rounded-lg"> 
+              
               <div className="relative w-full h-48 sm:h-56 md:h-64 mb-4 rounded-md overflow-hidden">
                 <Image
-                  src={`/members/h${imgNum}.jpeg`} // Ensure these paths are correct
+                  src={`/members/h${imgNum}.jpeg`} 
                   alt="News"
                   layout="fill"
                   objectFit="cover"
@@ -247,16 +242,16 @@ function Services() {
                 />
               </div>
               <div className="post-content">
-                <span className="text-blue-400 group-hover:text-white text-xs sm:text-sm font-medium">Design/SEO</span> {/* Responsive font size */}
-                <h5 className="text-lg sm:text-xl font-semibold text-white mt-2 group-hover:underline"> {/* Responsive font size */}
+                <span className="text-blue-400 group-hover:text-white text-xs sm:text-sm font-medium">Design/SEO</span> 
+                <h5 className="text-lg sm:text-xl font-semibold text-white mt-2 group-hover:underline"> 
                   <a href="blog-details.html">A series of iOS 7 inspired vector icons.</a>
                 </h5>
               </div>
               <a
                 href="blog-details.html"
-                className="inline-block text-blue-400 group-hover:text-white mt-3 text-lg sm:text-xl transition" /* Responsive font size */
+                className="inline-block text-blue-400 group-hover:text-white mt-3 text-lg sm:text-xl transition" 
               >
-                {/* Ensure you have FontAwesome or similar setup for 'fa-long-arrow-right' if not using Lucide */}
+                
                 <i className="fal fa-long-arrow-right"></i>
               </a>
             </div>

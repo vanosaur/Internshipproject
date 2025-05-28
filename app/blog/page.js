@@ -54,7 +54,7 @@ function Blog() {
         <div className="w-full lg:w-2/3 space-y-8 md:space-y-10">
           {/* Blog Post 1 - Standard Image Post */}
           <div className="max-w-full mx-auto bg-white overflow-hidden border-2 border-gray-200 rounded-lg shadow-md">
-            <div className="relative h-64 sm:h-80 md:h-96 w-full"> {/* Responsive image height */}
+            <div className="relative h-64 sm:h-80 md:h-96 w-full"> 
               <Image
                 src="/members/b1.jpeg"
                 alt="blog"
@@ -62,14 +62,14 @@ function Blog() {
                 objectFit="cover"
               />
             </div>
-            <div className="p-4 sm:p-6 md:p-8"> {/* Responsive padding */}
+            <div className="p-4 sm:p-6 md:p-8"> 
               <a href="#" className="text-sm text-blue-600 font-semibold mb-2 inline-block">
                 Business
               </a>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 leading-snug"> {/* Responsive font sizes */}
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 leading-snug">
                 Lorem ipsum dolor sit amet, consecte cing elit, sed do eiusmod tempor.
               </h2>
-              <ul className="flex flex-wrap text-gray-500 text-xs sm:text-sm mt-3 gap-2 sm:gap-4"> {/* Responsive font size and gap */}
+              <ul className="flex flex-wrap text-gray-500 text-xs sm:text-sm mt-3 gap-2 sm:gap-4">
                 <li className="flex items-center gap-1">
                   <Eye size={16} /> 232 Views
                 </li>
@@ -80,7 +80,7 @@ function Blog() {
                   <Calendar size={16} /> 24th March 2019
                 </li>
               </ul>
-              <p className="text-sm sm:text-base text-gray-600 mt-4 leading-relaxed"> {/* Responsive font size and line height */}
+              <p className="text-sm sm:text-base text-gray-600 mt-4 leading-relaxed"> 
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                 ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
               </p>
@@ -97,7 +97,7 @@ function Blog() {
                     <span className="text-gray-500">by</span> Hetmayar
                   </a>
                 </div>
-                <a href="#" className="flex items-center gap-1 text-blue-600 hover:underline text-sm"> {/* Responsive font size */}
+                <a href="#" className="flex items-center gap-1 text-blue-600 hover:underline text-sm"> 
                   Read More <ArrowRight size={16} />
                 </a>
               </div>
@@ -106,16 +106,16 @@ function Blog() {
 
           {/* Blog Post 2 - Video Post */}
           <div className="max-w-full mx-auto bg-white overflow-hidden border-2 border-gray-200 rounded-lg shadow-md">
-            <div className="relative w-full h-auto aspect-video"> {/* Use aspect-video for responsive video container */}
+            <div className="relative w-full h-auto aspect-video"> 
               {/* Image with Play Button */}
               <img
                 src="/members/b2.jpeg"
                 alt="blog"
-                className="w-full h-full object-cover rounded-t-lg" // Rounded top corners
+                className="w-full h-full object-cover rounded-t-lg" 
               />
               <button
                 onClick={() => setIsOpen(true)}
-                className="absolute inset-0 flex items-center justify-center bg-black/40 hover:bg-black/50 transition rounded-t-lg" // Rounded top corners
+                className="absolute inset-0 flex items-center justify-center bg-black/40 hover:bg-black/50 transition rounded-t-lg" 
               >
                 <Play className="w-12 h-12 text-white bg-black/70 p-2 rounded-full" />
               </button>
@@ -125,22 +125,22 @@ function Blog() {
                 <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center px-4">
                   <div className="relative w-full max-w-3xl aspect-video">
                     <iframe
-                      src="https://www.youtube.com/embed/YOUR_VIDEO_ID" // IMPORTANT: Replace with actual YouTube embed URL
+                      src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
                       title="YouTube video"
-                      allow="autoplay; encrypted-media; fullscreen" // Added fullscreen
+                      allow="autoplay; encrypted-media; fullscreen" 
                       className="w-full h-full rounded-lg shadow-xl"
                     ></iframe>
                     <button
                       onClick={() => setIsOpen(false)}
-                      className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-white text-black p-1.5 sm:p-2 rounded-full shadow-lg z-50" // Responsive positioning and padding
+                      className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-white text-black p-1.5 sm:p-2 rounded-full shadow-lg z-50" 
                     >
-                      <X className="w-5 h-5 sm:w-6 sm:h-6" /> {/* Responsive icon size */}
+                      <X className="w-5 h-5 sm:w-6 sm:h-6" /> 
                     </button>
                   </div>
                 </div>
               )}
             </div>
-            <div className="p-4 sm:p-6 md:p-8"> {/* Responsive padding */}
+            <div className="p-4 sm:p-6 md:p-8"> 
               <a href="#" className="text-sm text-blue-600 font-semibold mb-2 inline-block">
                 Business
               </a>
@@ -184,7 +184,7 @@ function Blog() {
 
           {/* Blog Post 3 - Standard Image Post */}
           <div className="max-w-full mx-auto mb-10 bg-white overflow-hidden border-2 border-gray-200 rounded-lg shadow-md">
-            <div className="relative h-64 sm:h-80 md:h-96 w-full"> {/* Responsive image height */}
+            <div className="relative h-64 sm:h-80 md:h-96 w-full"> 
               <Image
                 src="/members/b3.jpeg"
                 alt="blog"
@@ -192,7 +192,7 @@ function Blog() {
                 objectFit="cover"
               />
             </div>
-            <div className="p-4 sm:p-6 md:p-8"> {/* Responsive padding */}
+            <div className="p-4 sm:p-6 md:p-8">
               <a href="#" className="text-sm text-blue-600 font-semibold mb-2 inline-block">
                 Business
               </a>
@@ -390,7 +390,7 @@ function Blog() {
           <div className="bg-white p-6 border-2 border-gray-200 rounded-lg shadow-md">
             <h4 className="text-xl font-bold mb-4 text-center text-black">About Me</h4>
             <div className="space-y-4 text-center">
-              <Image src="/members/b4.jpeg" alt="About" width={160} height={160} className="mx-auto rounded-full" /> {/* Adjusted width/height, added rounded-full */}
+              <Image src="/members/b4.jpeg" alt="About" width={160} height={160} className="mx-auto rounded-full" /> 
               <h6 className="font-semibold text-lg text-black">Rosalina D. Willaimson</h6>
               <p className="text-sm text-gray-600 leading-relaxed">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
@@ -400,7 +400,7 @@ function Blog() {
                 <Twitter className="hover:text-sky-500 cursor-pointer" />
                 <Youtube className="hover:text-indigo-500 cursor-pointer" />
                 <Linkedin className="hover:text-blue-700 cursor-pointer" />
-                <Youtube className="hover:text-red-600 cursor-pointer" /> {/* Duplicate YouTube, consider if intentional */}
+                <Youtube className="hover:text-red-600 cursor-pointer" /> 
               </div>
             </div>
           </div>
@@ -434,7 +434,7 @@ function Blog() {
                     className="rounded-lg object-cover flex-shrink-0" // Added flex-shrink-0
                   />
                   <div>
-                    <a href="#" className="text-md sm:text-lg font-bold text-black hover:underline leading-tight"> {/* Responsive font size and line height */}
+                    <a href="#" className="text-md sm:text-lg font-bold text-black hover:underline leading-tight"> 
                       Lorem ipsum dolor sit cing elit, sed do.
                     </a>
                     <p className="text-xs text-blue-400 flex items-center mt-1">
@@ -457,9 +457,9 @@ function Blog() {
                 ['UI/UX', 56],
                 ['Technology', 60],
               ].map(([name, count]) => (
-                <li key={name} className="flex justify-between items-center text-md sm:text-lg bg-blue-900 text-white p-4 rounded-md"> {/* Responsive font size, added items-center, rounded-md */}
+                <li key={name} className="flex justify-between items-center text-md sm:text-lg bg-blue-900 text-white p-4 rounded-md"> 
                   <a href="#" className="hover:underline">{name}</a>
-                  <span className="bg-black text-white px-2 py-0.5 rounded-md text-sm">{count}</span> {/* Responsive padding and font size */}
+                  <span className="bg-black text-white px-2 py-0.5 rounded-md text-sm">{count}</span>
                 </li>
               ))}
             </ul>
@@ -468,10 +468,10 @@ function Blog() {
           {/* Social Links */}
           <div className="bg-white p-6 border-2 border-gray-200 rounded-lg shadow-md">
             <h4 className="text-xl font-semibold mb-4 text-black">Never Miss News</h4>
-            <div className="flex gap-4 sm:gap-5 justify-center "> {/* Responsive gap */}
+            <div className="flex gap-4 sm:gap-5 justify-center "> 
               <Facebook size={36} className="text-white cursor-pointer bg-blue-900 p-2 rounded-full hover:bg-blue-700 transition" /> {/* Increased size, padding, rounded-full, hover */}
               <Twitter size={36} className="text-white cursor-pointer bg-blue-900 p-2 rounded-full hover:bg-blue-700 transition" />
-              <Facebook size={36} className="text-white cursor-pointer bg-blue-900 p-2 rounded-full hover:bg-blue-700 transition" /> {/* Duplicate, consider if intentional */}
+              <Facebook size={36} className="text-white cursor-pointer bg-blue-900 p-2 rounded-full hover:bg-blue-700 transition" /> 
               <Linkedin size={36} className="text-white cursor-pointer bg-blue-900 p-2 rounded-full hover:bg-blue-700 transition" />
               <Twitter size={36} className="text-white cursor-pointer bg-blue-900 p-2 rounded-full hover:bg-blue-700 transition" />
             </div>
@@ -481,7 +481,7 @@ function Blog() {
           <div className="bg-white p-6 border-2 border-gray-200 rounded-lg shadow-md">
             <h4 className="text-xl font-semibold mb-4 text-black">Twitter Feeds</h4>
             {[1, 2, 3].map((_, idx) => (
-              <div key={idx} className="mb-6 flex gap-4 sm:gap-6 border-b border-gray-200 pb-4 last:border-b-0 last:mb-0"> {/* Responsive gap, added bottom border */}
+              <div key={idx} className="mb-6 flex gap-4 sm:gap-6 border-b border-gray-200 pb-4 last:border-b-0 last:mb-0"> 
                 <Twitter className='text-blue-600 flex-shrink-0 mt-1' size={20}/> {/* Added flex-shrink-0, adjusted size and margin */}
                 <div>
                   <ul className="text-sm text-blue-600 space-y-1 ">
@@ -499,7 +499,7 @@ function Blog() {
           {/* Instagram Feeds */}
           <div className="bg-white p-6 border-2 border-gray-200 rounded-lg shadow-md">
             <h4 className="text-xl font-semibold mb-4 text-black">Instagram Feeds</h4>
-            <div className="grid grid-cols-3 gap-3 sm:gap-4"> {/* Responsive gap */}
+            <div className="grid grid-cols-3 gap-3 sm:gap-4"> 
               {[...Array(9)].map((_, i) => (
                 <a key={i} href="#">
                   <Image
@@ -517,7 +517,7 @@ function Blog() {
           {/* Tags Widget */}
           <div className="bg-white p-6 border-2 border-gray-200 rounded-lg shadow-md">
             <h4 className="text-xl font-semibold mb-4 text-black">Popular Tags</h4>
-            <div className="flex flex-wrap gap-2 text-center justify-center items-center"> {/* Responsive gap */}
+            <div className="flex flex-wrap gap-2 text-center justify-center items-center"> 
               {[
                 'Popular', 'design', 'ux', 'usability', 'develop',
                 'icon', 'business', 'consult', 'kit', 'keyboard',
@@ -533,10 +533,10 @@ function Blog() {
           {/* Ad Widget */}
           <div className="relative bg-white p-0 border-2 border-gray-200 overflow-hidden rounded-lg shadow-md">
             <Image src="/members/image.png" alt="Ad Banner" width={350} height={600} className="w-full h-auto object-cover" /> {/* Adjusted height to auto for responsiveness */}
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white p-4"> {/* Responsive padding */}
-              <div className='bg-blue-600 p-3 sm:p-4 text-center rounded-md'> {/* Responsive padding and rounded-md */}
-                <span className="text-base sm:text-lg font-semibold">350x600</span> {/* Responsive font size */}
-                <h5 className="text-2xl sm:text-3xl font-bold mt-1 sm:mt-2">Ad Banner</h5> {/* Responsive font size and margin */}
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white p-4"> 
+              <div className='bg-blue-600 p-3 sm:p-4 text-center rounded-md'> 
+                <span className="text-base sm:text-lg font-semibold">350x600</span> 
+                <h5 className="text-2xl sm:text-3xl font-bold mt-1 sm:mt-2">Ad Banner</h5> 
               </div>
             </div>
           </div>

@@ -305,12 +305,12 @@ export default function Home() {
     
     <ScrollFadeIn>
     <section>
-      <div className="py-12 sm:py-16 md:py-20 bg-gray-50 dark:bg-gray-900 dark:text-white"> {/* Adjusted vertical padding */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"> {/* Centering container, responsive padding */}
+      <div className="py-12 sm:py-16 md:py-20 bg-gray-50 dark:bg-gray-900 dark:text-white"> 
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"> 
           <span className="text-base sm:text-lg font-semibold text-blue-800 mb-2 sm:mb-4 block">
             SERVICES
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-8 dark:text-white"> {/* Responsive font sizes */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-8 dark:text-white"> 
             What We Do
           </h2>
         </div>
@@ -329,7 +329,7 @@ export default function Home() {
                             transition-colors duration-300 ${service.bgColor} ${service.textColor}
                             ${service.hoverBgColor} ${service.hoverTextColor}`}
               >
-                <service.icon size={50} className="sm:w-14 sm:h-14 lg:w-[65px] lg:h-[65px]" /> {/* Responsive icon size */}
+                <service.icon size={50} className="sm:w-14 sm:h-14 lg:w-[65px] lg:h-[65px]" /> 
               </div>
               {/* Title */}
               <h5 className="title text-lg sm:text-xl font-bold text-gray-800 mb-2">
@@ -419,12 +419,12 @@ export default function Home() {
 
     <ScrollFadeIn>
     <section> 
-      <div className="py-12 sm:py-16 md:py-20 bg-gray-50 dark:bg-gray-900 dark:text-white"> {/* Responsive vertical padding */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"> {/* Responsive horizontal padding and centering */}
-          <span className="text-base sm:text-lg font-semibold text-blue-800 mb-2 sm:mb-4 block"> {/* Responsive font size for SERVICES */}
+      <div className="py-12 sm:py-16 md:py-20 bg-gray-50 dark:bg-gray-900 dark:text-white"> 
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"> 
+          <span className="text-base sm:text-lg font-semibold text-blue-800 mb-2 sm:mb-4 block"> 
             OUR LATEST SERVICES
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black leading-tight  dark:text-white"> {/* Responsive font size and line height */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black leading-tight  dark:text-white"> 
             We Offer Better Solution <br className="hidden sm:inline" /> For Your IT Business
           </h2>
         </div>
@@ -438,18 +438,18 @@ export default function Home() {
                          text-left flex flex-col justify-start" // Added flex for consistent alignment, text-left
             >
               {/* Icon */}
-              {/* Responsive icon size: default 24px, sm: 28px, md: 30px */}
+              
               <service.icon size={24} className={`sm:w-7 sm:h-7 md:w-8 md:h-8 ${service.textColor} mb-3`} />
               
               {/* Title */}
-              <h3 className="title text-xl sm:text-2xl font-bold text-gray-800 mb-2"> {/* Responsive font size for title */}
+              <h3 className="title text-xl sm:text-2xl font-bold text-gray-800 mb-2"> 
                 <Link href={service.link} className="hover:text-blue-600 transition-colors duration-300">
                   {service.title}
                 </Link>
               </h3>
               
               {/* Description */}
-              <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-0 flex-grow"> {/* Responsive font size, flex-grow */}
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-0 flex-grow"> 
                 {service.description}
               </p>
             </div>
